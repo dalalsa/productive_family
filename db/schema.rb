@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_11_28_075837) do
-=======
-ActiveRecord::Schema.define(version: 2018_11_28_082227) do
->>>>>>> 7928ce899d03b68cbe573b87adfb9ac13ed72575
-=======
-ActiveRecord::Schema.define(version: 2018_11_28_075921) do
->>>>>>> 7a664e8a437de72af2fcdab66dfbdd6546c566cf
+ActiveRecord::Schema.define(version: 2018_11_28_105821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "items", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "product_id"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_11_28_075921) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
+    t.integer "seller_id"
   end
 
   create_table "sellers", force: :cascade do |t|
