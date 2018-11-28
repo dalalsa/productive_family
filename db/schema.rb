@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_160902) do
+<<<<<<< HEAD
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2018_11_28_075837) do
+=======
+ActiveRecord::Schema.define(version: 2018_11_28_082227) do
+>>>>>>> 7928ce899d03b68cbe573b87adfb9ac13ed72575
+=======
+ActiveRecord::Schema.define(version: 2018_11_28_075921) do
+>>>>>>> 7a664e8a437de72af2fcdab66dfbdd6546c566cf
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -22,6 +37,25 @@ ActiveRecord::Schema.define(version: 2018_11_27_160902) do
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
+  end
+
+  create_table "sellers", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "username"
+    t.string "name"
+    t.integer "delivery_cost"
+    t.string "img"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_sellers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_sellers_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_sellers_on_username", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,7 +67,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_160902) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.string "location"
+    t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
