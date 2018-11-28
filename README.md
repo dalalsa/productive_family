@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+class Item < ApplicationRecord
+    belongs_to :order
+    belongs_to  :product
+    
+end
 
-Things you may want to cover:
 
-- Ruby version
+class Order < ApplicationRecord
+    has_many :items
+end
 
-- System dependencies
+class Product < ApplicationRecord
+    belongs_to :seller
+    has_many :items
+end
 
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ........................
+class Seller < ApplicationRecord
+  has_many :products
+end
