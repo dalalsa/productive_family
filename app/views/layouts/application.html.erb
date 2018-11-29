@@ -8,6 +8,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+
+
+
           <%if seller_signed_in? %> 
               <ul>
                   <li>    <%= link_to "View Profile ", seller_path(current_seller) %> </li>
@@ -28,13 +31,10 @@
                    <li> <%= link_to "Sign Up user", new_user_registration_path %> </li>
             <% end %> 
                 </ul> 
-<p> هنا موجود ٢ تسجيل دخول حسب اذا يوزر او بائع 
-احتاج
+<p> index & show users  JUST for us as an admin
   </p>
+  <p></p>
 
- وفورم يختار فيها المستخدم اذا يبي يسجل دخول كبائع وهذا يكون بمكان تحت الصفحة او على جنب if statment  <p>
- اما تسجيل دخول الزبون او العميل يكون في مكان واضح 
- //نوره </p>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
