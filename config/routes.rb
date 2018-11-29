@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post "items/:id/add" => "items#add_quantity", as: "item_add"
   post "items/:id/reduce" => "items#reduce_quantity", as: "item_reduce"
   post "items" => "items#create"
-  get "tems/:id" => "items#show", as: "item"
+  get "items/:id" => "items#show", as: "item"
   delete "items/:id" => "items#destroy"
 
   devise_for :sellers, path: "sellers",
