@@ -2,6 +2,8 @@
 <% @sellers.each do |seller| %>
   <% seller.img %>
   Name: <%= seller.name %>
-  Description: <% seller.description %>
+  <%#= console %>
+  Description: <%= seller.description %>
+  <br>
   <%= link_to 'More details', seller_path(seller) %>
 <% end %>

@@ -1,5 +1,10 @@
 <%if seller_signed_in?%>
   <%= render partial: 'seller_show' %>
+  <% @seller.products.each do |p| %>
+    <%= p.name %>
+    <%= link_to 'Delete', product_path(p), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Edit', edit_product_path(p)%>
+  <%end %>
 <% else    %>
   <h1><%= @seller.id %></h1>
   <div>
@@ -15,4 +20,5 @@
         <%#= link_to "Reduce one", item_reduce_path(:id => item), method: :post %>
       </li>
     <% end %>
-  </div>
+  <% end %>
+</div>
