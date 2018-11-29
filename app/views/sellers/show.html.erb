@@ -1,2 +1,17 @@
-<h1><%= @seller.id %></h1>
 
+<%if seller_signed_in?%>
+<%= render partial: 'seller_show' %>
+
+<% else    %>
+<h1><%= @seller.id %></h1>
+<h1><%=@seller.name%></h1>
+<h1><%=@seller.username%></h1>
+<h1><%=@seller.email%></h1>
+<h1><%=@seller.phone%></h1>
+<h1><%=@seller.img%></h1>
+<h1><%=@seller.description%></h1>
+<h1><%=@seller.delivery_cost%></h1>
+
+<%end%>
+
+<h1>

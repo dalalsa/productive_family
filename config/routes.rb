@@ -11,7 +11,7 @@ Rails.application.routes.draw do
           registrations: 'users/registrations'
         }
 
-
+  
   resources :sellers, only: [:index, :show]
   # index sellers will be in the home page  
   # Show seller when a customer choose the seller (add to cart and products will be there) /Nora
