@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -12,3 +13,5 @@
 # Order.create(user_id: 1, status: "pending", item_id:1);
 # Order.create(user_id: 1, status: "rejected", item_id: 1);
 
+=======
+>>>>>>> 7b3a8ca41e79e3fd6863ddc2e9a788d0dd4126d8

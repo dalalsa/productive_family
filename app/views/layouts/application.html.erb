@@ -8,6 +8,33 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+          <%if seller_signed_in? %> 
+              <ul>
+                  <li>    <%= link_to "View Profile ", seller_path(current_seller) %> </li>
+                  <li>    <%= link_to 'Log Out', destroy_seller_session_path, method: :delete %> </li>
+                 
+            <% else %>
+                   <li> <%= link_to "Log in", new_seller_session_path %> </li>
+                   <li> <%= link_to "Sign Up", new_seller_registration_path %> </li>
+            <% end %> 
+                </ul> 
+          <%if user_signed_in? %> 
+              <ul>
+                  <li>    <%= link_to "View Profile user ", user_path(current_user) %> </li>
+                  <li>    <%= link_to 'Log Out user', destroy_user_session_path, method: :delete %> </li>
+                 
+            <% else %>
+                   <li> <%= link_to "Log in user", new_user_session_path %> </li>
+                   <li> <%= link_to "Sign Up user", new_user_registration_path %> </li>
+            <% end %> 
+                </ul> 
+<p> هنا موجود ٢ تسجيل دخول حسب اذا يوزر او بائع 
+احتاج
+  </p>
+
+ وفورم يختار فيها المستخدم اذا يبي يسجل دخول كبائع وهذا يكون بمكان تحت الصفحة او على جنب if statment  <p>
+ اما تسجيل دخول الزبون او العميل يكون في مكان واضح 
+ //نوره </p>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
