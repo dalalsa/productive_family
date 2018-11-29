@@ -1,0 +1,55 @@
+
+<div>
+<%= form_for @product do |f| %>
+<div>
+<%= f.label :name %>
+</div>
+
+<div>
+<%= f.text_field :name  %>
+</div>
+
+<div>
+<%= f.label :description %>
+</div>
+
+<div>
+<%= f.text_area :description  %>
+</div>
+
+<div>
+<%= f.label :category %>
+</div>
+
+
+<div>
+<%= f.text_field :category  %>
+</div>
+
+<div>
+<%= f.label :image %>
+</div>
+
+
+<div>
+<%= f.text_field :image  %>
+</div>
+
+
+
+
+<div>
+<%= f.label :price %>
+</div>
+
+
+<div>
+<%= f.text_field :price  %>
+</div>
+
+
+<div>
+<%= f.submit %>
+</div>
+<% end %>
+</div>
