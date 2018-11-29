@@ -1,15 +1,18 @@
-<h1><%= @seller.id %></h1>
-<div>
-  <h5>All Products by the seller:</h5>
-  <% @seller.products.each do |product| %>
-    <%= product.name %>
-    <br>
-    <%= product.price %>
-    <br>
-    <%= button_to "Add #{product.name} to cart", items_path(:product_id => product.id) %>
-    <li>
-      <%#= link_to "Add one", item_add_path(:item_id => item.id), method: :post %>
-      <%#= link_to "Reduce one", item_reduce_path(:id => item), method: :post %>
-    </li>
-  <% end %>
-</div>
+<%if seller_signed_in?%>
+  <%= render partial: 'seller_show' %>
+<% else    %>
+  <h1><%= @seller.id %></h1>
+  <div>
+    <h5>All Products by the seller:</h5>
+    <% @seller.products.each do |product| %>
+      <%= product.name %>
+      <br>
+      <%= product.price %>
+      <br>
+      <%= button_to "Add #{product.name} to cart", items_path(:product_id => product.id) %>
+      <li>
+        <%#= link_to "Add one", item_add_path(:item_id => item.id), method: :post %>
+        <%#= link_to "Reduce one", item_reduce_path(:id => item), method: :post %>
+      </li>
+    <% end %>
+  </div>

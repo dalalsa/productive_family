@@ -1,29 +1,60 @@
 <h2>Sign up</h2>
-
+app/views/sellers/registrations/new.html.erb
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<h3> Log In Information </h3>
+      <div class="field">
+            <%= f.label :username, "Enter Your Username" %>   <br> 
+            <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+      <div class="field">
+            <%= f.label :email, "Enter your email" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+      <div class="field">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+      <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+      <div>
+            <h3>Store information</h3>  
+      <div class="field">
+            <%= f.label :name, "Your store name"%>  <br>
+            <%= f.text_field :name %>
+      </div> 
+      <div class="field">
+            <%= f.label :phone, "Phone number"%>  <br>
+            <%= f.telephone_field :phone %>
+      </div> 
+      <div class="field">
+            <%= f.label :description %>  <br>
+            <%= f.telephone_field :description %>
+      </div> 
+
+      <div class="field">
+            <%= f.label :delivery_cost, "delivery cost " %> <br>
+            <%= f.number_field :delivery_cost %>
+      </div>  
+      </div>      
+      <div class="field">
+            <%= f.label :img,  "upload your logo"%>  <br>
+            <%= f.file_field :img %>
+      </div>  
+
+      </div>
+      <div class="actions">
+            <%= f.submit "Sign up" %>
+      </div>
 <% end %>
 
 <%= render "sellers/shared/links" %>
