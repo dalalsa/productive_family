@@ -6,13 +6,18 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get show" do
-    get orders_show_url
+  test "should get new" do
+    get orders_new_url
     assert_response :success
   end
 
-  test "should get new" do
-    get orders_new_url
+  test "should get edit" do
+    get orders_edit_url
+    assert_response :success
+  end
+
+  test "should get show" do
+    get orders_show_url
     assert_response :success
   end
 
