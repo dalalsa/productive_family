@@ -1,2 +1,20 @@
 <h1><%= @seller.id %></h1>
 
+
+     <div>
+    <h5>All Products by the user:</h5>
+<% @seller.products.in_groups_of(3, false).each do |group| %>
+     
+
+    
+ <% group.each do |product| %>
+
+      
+       <h5><%= product.name %></h5> 
+          <p> <%= product.description %></p>
+          <a href=<%= items_path(:product.id => product.id) %>>Add to cart</a>
+  
+      <% end %>
+     <% end %>
+</div>
+

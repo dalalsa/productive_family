@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   end
 
   def create 
-    product = Product.create(product_params)
+    product = current_seller.products.create(product_params)
    # redirect_to product_path(product)
 
   end
