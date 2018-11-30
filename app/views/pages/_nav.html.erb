@@ -1,0 +1,52 @@
+
+    <nav>
+
+    <div >
+        Logo
+        <div> 
+        <% unless user_signed_in? %>
+             <% if seller_signed_in? %>
+             <ul>
+                <li><%= link_to "View Profile ", seller_path(current_seller) %> </li>
+                <li> <%= link_to 'Log Out', destroy_seller_session_path, method: :delete %> </li>
+            <% else %>
+                    <%= link_to "Join us as Seller", new_seller_registration_path %>
+            <% end %>
+        
+        <% end %>
+        </div>
+            <div>
+               <ul> 
+               <% unless seller_signed_in? %>
+                <%if user_signed_in? %>
+        
+                    <li> <%= link_to "View Profile user ", user_path(current_user) %> </li>
+                    <li> <%= link_to 'Log Out user', destroy_user_session_path, method: :delete %> </li>
+                <% else %>
+                    <li> <%= link_to "Log in user", new_user_session_path %> </li>
+                    <li> <%= link_to "Sign Up user", new_user_registration_path %> </li>
+                <% end %>
+                <% end %>
+                </ul> 
+        
+                  <div class="nav-wrapper" id="navS">
+  
+            <ul class="right hide-on-med-and-down  cyan darken-2 white-text">
+                 <li><%= link_to " Home " %></li>
+                 <li><%= link_to " Services " %></li>
+                 <li><%= link_to " Our Experts "%></li>
+                 <li><%= link_to "About Us" %> </li>
+                 <li><%= link_to "Contact" %> </li>
+                
+
+            </ul>
+                </div>
+    
+        
+                     
+                  
+            </div> 
+    </div>        
+ 
+ </nav> 
+ 
