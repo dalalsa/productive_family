@@ -18,7 +18,7 @@ Rails.application.routes.draw do
                        sessions: "users/sessions",
                        registrations: "users/registrations",
                      }
-
+  
   resources :sellers, only: [:index, :show]
   resources :users, only: [:index, :show]
   resources :products

@@ -8,11 +8,21 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-  <%= render partial: 'pages/nav' %>
-  
-    <p></p>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <header>
+          <%= render partial: 'pages/nav' %>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+    </header>
+    <main>    
+        <%= yield %>
+    </main>
+    
+    <footer>
+    
+    
+    </footer>
+<%= render partial: 'pages/footer' %>
+
   </body>
+
 </html>
