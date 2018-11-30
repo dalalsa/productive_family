@@ -12,17 +12,19 @@ class ItemsController < ApplicationController
     @item = current_cart.items.find_by(:product_id => chosen_product)
     @item.quantity += 1
   else
-    @item = Item.new
-    @item.cart = current_cart
-    @item.product = chosen_product
+    # @item = Item.new(item_params)
+    # @item.cart = current_cart
+    # @item.product = chosen_product
+    # current_cart = 
   end
   @item.save
   
   redirect_to cart_path(current_cart)
-end
 
+
+end
 private
   def item_params
-    params.require(:item).permit(:order_id, :product_id, :quantity,:cart_id)
+    params.require(:item).permit(:product_id, :quantity,:cart_id, :order_id)
   end
 end
