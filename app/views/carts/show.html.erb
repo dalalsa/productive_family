@@ -4,9 +4,9 @@
   Item: <%= item.product.name %>
   Price: <%= number_to_currency(item.product.price) %>
   Quantity: <%= item.quantity %>
-  <%= link_to "Add one", item_add_path(:id => item), method: :post %>
-  <%= link_to "Reduce one", item_reduce_path(:id => item), method: :post %>
-  <%= link_to "Remove item", item_path(item), method: :delete %>
+  <%#= link_to "Add one", item_add_path(:id => item), method: :post %>
+  <%#= link_to "Reduce one", item_reduce_path(:id => item), method: :post %>
+  <%#= link_to "Remove item", item_path(item), method: :delete %>
 <% end %>
 <h3>total: <%#= number_to_currency(@cart.sub_total) %></h3>
 <%= link_to "Proceed to checkout", new_order_path %><br>

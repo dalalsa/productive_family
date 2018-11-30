@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   resources :sellers, only: [:index, :show]
   resources :users, only: [:index, :show]
   resources :products
-  # resources :items
+  resources :items
+  resources :carts
+
   resources :orders
 
   
