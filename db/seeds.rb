@@ -6,3 +6,5 @@
 # Seller.destroy_all
 
 # Product.create(name: "cakes store", image:"ddddd", price: 22, category: "sweet", description: "cakes for best taste", seller_id: 2 );Product.create(name: "cakes store", image:"ddddd", price: 22, category: "sweet", description: "cakes for best taste", seller_id: 3 );
+Order.create(user_id: 1, status: "pending");
+# Item.create(: 1, status: "pending");

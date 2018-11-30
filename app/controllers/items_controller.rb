@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   def create
+    # raise "error"
   chosen_product = Product.find(params[:product_id])
   current_cart = @current_cart
 
