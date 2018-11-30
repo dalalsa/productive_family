@@ -13,25 +13,18 @@ Rails.application.routes.draw do
                          registrations: "sellers/registrations",
                        }
 
-<<<<<<< HEAD
-  
-=======
   devise_for :users, path: "users",
-                     controllers: {
+                      controllers: {
                        sessions: "users/sessions",
                        registrations: "users/registrations",
                      }
 
->>>>>>> 04b0d82daabb1b2e15a5ac4484d7aa1e382f283d
   resources :sellers, only: [:index, :show]
-  # index sellers will be in the home page
-  # Show seller when a customer choose the seller (add to cart and products will be there) /Nora
   resources :users, only: [:index, :show]
   resources :products
   resources :items
   resources :orders
 
   
-  # in my opinion we need index and show users JUST for us as an admin / Nora
   root "pages#home"
 end
