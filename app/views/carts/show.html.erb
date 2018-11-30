@@ -1,5 +1,5 @@
 <h2>Cart show</h2>
-<%#= console %>
+<%= console %>
 <% @cart.items.each do |item| %>
   Item: <%= item.product.name %>
   Price: <%= number_to_currency(item.product.price) %>

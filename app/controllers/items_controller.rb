@@ -1,4 +1,8 @@
 class ItemsController < ApplicationController
+  def show
+    @item = Item.find_by(id: params[:id])
+  end
+  
   def create
     # raise "error"
   chosen_product = Product.find(params[:product_id])
@@ -13,6 +17,7 @@ class ItemsController < ApplicationController
     @item.product = chosen_product
   end
   @item.save
+  
   redirect_to cart_path(current_cart)
 end
 
