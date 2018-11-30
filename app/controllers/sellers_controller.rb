@@ -7,9 +7,5 @@ class SellersController < ApplicationController
     @seller = Seller.find_by(id:params[:id])
   end
 
-  def dashboard
-     
-     
-  end
 
 end

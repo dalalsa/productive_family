@@ -26,5 +26,6 @@ Rails.application.routes.draw do
   resources :orders
 
   
-  root "pages#home"
+  # in my opinion we need index and show users JUST for us as an admin / Nora
+  root "sellers#index"
 end
