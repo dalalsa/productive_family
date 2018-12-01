@@ -5,9 +5,12 @@
 <h2>Total</h2>
 <h3>Current Address</h3>
 <div id="map">
-  <%# <form >
+  <form >
     <input type="submit" value="Get location">
-  </form> %>
+  </form>
 </div>
-<div id="test">
-</div>
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=#{ENV[API_KEY]}"
+      async
+      defer
+    ></script>
