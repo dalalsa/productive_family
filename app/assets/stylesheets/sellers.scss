@@ -1,3 +1,53 @@
 // Place all the styles related to the Sellers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.card-content {
+
+width: 950px;
+padding: 20px;
+height: 500px;
+border: 1px solid #d1d8d9;
+}
+
+div.serllerspage {
+    margin: 0px;
+    padding: 5px 40px 0px 200px;
+    /* width: 50%; */
+} 
+
+div.card-panel{
+    padding: 0px;
+    margin: 0px 0px;
+    width: 300px;
+}
+
+div.col.s4{
+    border: 1px solid #d1d8d9;
+    height: 300px;
+    padding: 30px;
+}
+
+h4{
+    text-align: center;
+}
+
+hr{
+margin: 30px;
+}
+
+div.seller-regis{
+    width: 60%;
+}
+
+h4{
+    text-align: left;
+}
+
+.row .col.s8{
+    margin: 20px;
+    border: 1px solid #d1d8d9;
+    height: 100px;
+    width: 700px;
+    padding: 10px;
+}
+

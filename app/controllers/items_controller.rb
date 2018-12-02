@@ -22,7 +22,8 @@ class ItemsController < ApplicationController
 
 end
 
-private
+  private
+
   def item_params
     params.permit(:product_id, :quantity).merge(cart_id: @current_cart.id)
     # params.require(:item).permit(:product_id, :quantity,:cart_id, :order_id)

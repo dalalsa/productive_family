@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   # resources :carts
 
   resources :orders
-
+  get "pages/home"
   
   root "sellers#index"
 end
