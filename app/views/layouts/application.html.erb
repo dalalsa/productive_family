@@ -5,24 +5,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> %>
   </head>
   <body>
     <header>
-          <%= render partial: 'pages/nav' %>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+      <%= render partial: 'pages/nav' %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     </header>
-    <main>    
-        <%= yield %>
+    <main>
+      <%= yield %>
     </main>
-    
     <footer>
-    
-    
     </footer>
-<%= render partial: 'pages/footer' %>
-
+    <%= render partial: 'pages/footer' %>
   </body>
-
 </html>
