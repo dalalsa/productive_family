@@ -8,6 +8,8 @@
     <%= link_to 'Delete', product_path(p), method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to 'Edit', edit_product_path(p)%>
   <%end %>
+
+  
 <% else    %>
   <h3><%= @seller.id %></h3>
 
