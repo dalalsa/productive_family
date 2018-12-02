@@ -1,4 +1,6 @@
-class OrdersController < ApplicationController
+class OrdersController < ApplicationController#   def index
+#     @orders=Order.all
+#   end
 
   def index
     @orders = Order.all
@@ -11,6 +13,7 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
   end
+  # raise "kj"
   def create
   @order = Order.new(order_params)
   @current_cart.items.each do |item|
