@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   get "carts/:id" => "carts#show", as: "cart"
   delete "carts/:id" => "carts#destroy"
   post "items/:id/add" => "items#add_quantity", as: "item_add"
@@ -23,6 +24,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :products
   # resources :items
+  # resources :carts
+
   resources :orders
 
   
