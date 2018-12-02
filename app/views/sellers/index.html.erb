@@ -1,8 +1,10 @@
 <h1> Our Partners  </h1>
-<% @sellers.each do |seller| %>
-  <% seller.img %>
-  Name: <%= seller.name %>
-  <%#= console %>
+    <% @sellers.each do |seller| %>
+ 
+      Name: <%= seller.name %>
+
+
+
   Description: <%= seller.description %>
   <br>
   <%= link_to 'More details', seller_path(seller) %>
