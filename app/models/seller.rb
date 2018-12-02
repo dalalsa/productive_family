@@ -5,7 +5,8 @@ class Seller < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # validates :username, uniqueness: true
-  
+
   has_many :products
-  ratyrate_rateable 'quality', 'delviry_cost', 'price_for_quality'
+  ratyrate_rateable "quality", "delviry_cost", "price_for_quality"
+  has_many :orders
 end
