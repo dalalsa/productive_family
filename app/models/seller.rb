@@ -7,4 +7,5 @@ class Seller < ApplicationRecord
   # validates :username, uniqueness: true
   
   has_many :products
+  ratyrate_rateable 'quality', 'delviry_cost', 'price_for_quality'
 end

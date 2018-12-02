@@ -1,2 +1,36 @@
-<h1>Orders#new</h1>
-<p>Find me in app/views/orders/new.html.erb</p>
+<h2>item1</h2>
+<h2>item2</h2>
+<h2>item3</h2>
+<h2>item4</h2>
+<h2>Total</h2>
+<h3>Current Address</h3>
+<div id="map" style="width: 400px; height: 400px"></div>
+<script>
+  function getAddress() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      //   console.log(position);
+      let latResult = position.coords.latitude;
+      let longResult = position.coords.longitude;
+      console.log("lat " + latResult, "long " + longResult);
+      //   let result = latResult + "," + longResult;
+      let myLatlng = new google.maps.LatLng(latResult, longResult);
+      let map = new google.maps.Map(document.getElementById("map"), {
+        center: myLatlng,
+        zoom: 8
+      });
+      // Add marker
+      let marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: "current location"
+      });
+  
+    });
+  } else {
+    console.log("geolocation is not supported ");
+  }
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.dig(:google_maps_api_key) %>&callback=getAddress"
+    async defer></script>

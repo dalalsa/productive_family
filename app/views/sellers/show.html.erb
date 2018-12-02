@@ -33,6 +33,27 @@
     <% end %>
   <% end %>
 </div>
+<<<<<<< HEAD
 </div>
 </div>
+=======
+
+<!-- orders history-->
+<div class="row">
+  <div class="small-2 large-2 columns">
+    <%= imdb_style_rating_for @seller, current_user%>
+  </div>
+  <br>
+  <div class="small-2 large-4 columns">
+    <% if current_user %>
+      quality: <%= rating_for @seller, "quality", stars: 10 %>
+      <br>
+      delviry cost: <%= rating_for @seller, "delviry_cost" %>
+      <br>
+      
+      <br>
+      price for quality: <%= rating_for @seller, "price_for_quality" %>
+    <% end %>
+  </div>
+>>>>>>> 28e0467976f39c1831a270d90cb3ab07e84608b3
 </div>
