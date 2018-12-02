@@ -5,8 +5,8 @@ class ItemsController < ApplicationController
   
   def create
   chosen_product = Product.find(params[:product_id])
+  # seller = chosen_product.seller_id
   current_cart = @current_cart
-
   if current_cart.products.include?(chosen_product)
     @item = current_cart.items.find_by(:product_id => chosen_product.id)
     @item.quantity += 1

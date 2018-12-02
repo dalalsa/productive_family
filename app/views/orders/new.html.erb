@@ -1,3 +1,10 @@
+<% @cart.items.each do |item| %>
+ Item: <%= item.product.name %>
+  Price: <%= number_to_currency(item.product.price) %>
+  Quantity: <%= item.quantity %>
+
+<% end %>
+<h2>Total</h2>
 <h3>Current Address</h3>
 <div id="map" style="width: 400px; height: 400px"></div>
 <script>
@@ -29,4 +36,6 @@
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.dig(:google_maps_api_key) %>&callback=getAddress"
     async defer></script>
-<%=  link_to 'Confirm', orders_path(@order), method: :post %>
+
+
+<%= button_to "buy" , orders_path(@order), method: :post %>
