@@ -1,46 +1,34 @@
 <div class = "serllerspage ">
 <div class= "card-content">
 
-
 <%if seller_signed_in?%>
   <%= render partial: 'seller_show' %>
   <% @seller.products.each do |p| %>
     <%= p.name %>
     <%= link_to 'Delete', product_path(p), method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to 'Edit', edit_product_path(p)%>
-  <%end %>
-<% else    %>
+<%end %>
+<% else %>
   <h3><%= @seller.id %></h3>
 <div class="divider"></div>
 
-
-
-    <h5>All Products by the seller:</h5>
-    <div class="row">
-<% @seller.products.each do |product| %>
-<div class="col s8">
-<div>
+  <h5>All Products by the seller:</h5> 
+  <div class="row">
+  <% @seller.products.each do |product| %>
+  <div class="col s8">
       <%= product.name %>
-      <br>
-      <%= product.price %>
-      <br>
-      <br>
-      <p>image</p>
-      <%=  cl_image_tag product.image %> 
-
-      <br>
+      <p> Price: <%= product.price %></p>
+      <%=  cl_image_tag(product.image, :width => 70, :height => 70) %> 
       <%#= console %>
       <%= button_to "Add #{product.name} to cart", items_path(:product_id => product.id) %>
         <%#= link_to "Add one", item_add_path(:item_id => item.id), method: :post %>
         <%#= link_to "Reduce one", item_reduce_path(:id => item), method: :post %>
-        </div>
-          <br>
-
-    <% end %>
+      </div>
   <% end %>
-</div>
-</div>
-</div>
+  <% end %>
+  </div>
+  </div>
+
 
 <!-- orders history-->
 <div class="row">
