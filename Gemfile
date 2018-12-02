@@ -13,6 +13,8 @@ gem 'puma', '~> 3.11'
 gem "cloudinary"
 gem "rest-client", "~> 2.0"
 gem "carrierwave"
+gem 'jquery-rails'
+gem 'ratyrate'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
