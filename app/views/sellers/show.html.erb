@@ -1,3 +1,7 @@
+<div class = "serllerspage ">
+<div class= "card-content">
+
+
 <%if seller_signed_in?%>
   <%= render partial: 'seller_show' %>
   <% @seller.products.each do |p| %>
@@ -6,20 +10,29 @@
     <%= link_to 'Edit', edit_product_path(p)%>
   <%end %>
 <% else    %>
-  <h1><%= @seller.id %></h1>
-  <div>
+  <h3><%= @seller.id %></h3>
+<div class="divider"></div>
+
+
+
     <h5>All Products by the seller:</h5>
-    <% @seller.products.each do |product| %>
+    <div class="row">
+<% @seller.products.each do |product| %>
+<div class="col s8">
+<div>
       <%= product.name %>
       <br>
       <%= product.price %>
-      <br>
       <%#= console %>
       <%= button_to "Add #{product.name} to cart", items_path(:product_id => product.id) %>
-      <li>
         <%#= link_to "Add one", item_add_path(:item_id => item.id), method: :post %>
         <%#= link_to "Reduce one", item_reduce_path(:id => item), method: :post %>
-      </li>
+        </div>
+          <br>
+
     <% end %>
   <% end %>
+</div>
+</div>
+</div>
 </div>
