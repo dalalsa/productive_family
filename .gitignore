@@ -25,5 +25,11 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+<<<<<<< HEAD
 /config/cloudinary.yml.enc
 .env
+=======
+.env
+
+config/master.key
+>>>>>>> 7643a0634403da7924796dbe5e3b99df2746b603

@@ -1,5 +1,4 @@
-<div class = "serllerspage ">
-<div class= "card-content">
+
 
 <%if seller_signed_in?%>
   <%= render partial: 'seller_show' %>
@@ -10,7 +9,7 @@
 <%end %>
 <% else %>
   <h3><%= @seller.id %></h3>
-<div class="divider"></div>
+
 
   <h5>All Products by the seller:</h5> 
   <div class="row">
@@ -20,7 +19,7 @@
       <p> Price: <%= product.price %></p>
       <%=  cl_image_tag(product.image, :width => 70, :height => 70) %> 
       <%#= console %>
-      <%= button_to "Add #{product.name} to cart", items_path(:product_id => product.id) %>
+      <div><%= button_to "Add #{product.name} to cart", items_path(:product_id => product.id) %></div>
         <%#= link_to "Add one", item_add_path(:item_id => item.id), method: :post %>
         <%#= link_to "Reduce one", item_reduce_path(:id => item), method: :post %>
       </div>
@@ -31,12 +30,9 @@
 
 
 <!-- orders history-->
-<div class="row">
-  <div class="small-2 large-2 columns">
+
     <%= imdb_style_rating_for @seller, current_user%>
-  </div>
-  <br>
-  <div class="small-2 large-4 columns">
+ 
     <% if current_user %>
       quality: <%= rating_for @seller, "quality", stars: 10 %>
       <br>
@@ -46,5 +42,5 @@
       <br>
       price for quality: <%= rating_for @seller, "price_for_quality" %>
     <% end %>
-  </div>
-</div>
+
+ 
