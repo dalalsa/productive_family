@@ -15,9 +15,12 @@ class OrdersController < ApplicationController #   def index
   def new
     @order = Order.new
     @cart = @current_cart
+
+    raise
   end
 
   def approve
+    raise "text"
     order = Order.find_by(id: params[:id])
     order.status = "Approved"
     order.save
@@ -30,6 +33,7 @@ class OrdersController < ApplicationController #   def index
   end
 
   def create
+    # raise "text"
     order = current_user.orders.create(status: "pending")
 
     # @current_cart.items.each do |item|
