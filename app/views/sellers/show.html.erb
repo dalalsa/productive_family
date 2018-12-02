@@ -14,6 +14,11 @@
       <br>
       <%= product.price %>
       <br>
+      <br>
+      <p>image</p>
+      <%=  cl_image_tag product.image %> 
+
+      <br>
       <%#= console %>
       <%= button_to "Add #{product.name} to cart", items_path(:product_id => product.id) %>
       <li>
