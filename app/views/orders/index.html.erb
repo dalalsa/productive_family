@@ -1,13 +1,12 @@
-
 <h2>All Orders</h2>
-
+<%= console %>
 <% @orders.each do |order| %>
   <p><%= item.user_id %></p>
   <p><%= item.status %></p>
   <p>Line Items: </p>
   <ul>
     <% order.items.each do |item| %>
-    <li><%= item.quantity %> x <%= item.product.name %></li>
+      <li><%= item.quantity %> x <%= item.product.name %></li>
     <% end %>
   </ul>
-<% end
+<% end %>

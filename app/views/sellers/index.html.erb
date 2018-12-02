@@ -1,19 +1,18 @@
 <div class = "serllerspage ">
-<div class= "card-content">
-<h4> Our Partners  </h4>
-<hr>
-<div class="row">
-<div class="col s4">
-
-<% @sellers.each do |seller| %>
-  <% seller.img %>
-  Name: <%= seller.name %>
-  <%#= console %>
-  Description: <%= seller.description %>
-  <br>
-  <%= link_to 'More details', seller_path(seller) %>
-<% end %>
-</div>
-</div>
-</div>
+  <div class= "card-content">
+    <h4> Our Partners  </h4>
+    <hr>
+    <div class="row">
+      <div class="col s4">
+        <% @sellers.each do |seller| %>
+          <%= cl_image_tag  seller.img %>
+          Name: <%= seller.name %>
+          <%#= console %>
+          Description: <%= seller.description %>
+          <br>
+          <%= link_to 'More details', seller_path(seller) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
