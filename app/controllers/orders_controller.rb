@@ -2,7 +2,9 @@ class OrdersController < ApplicationController #   def index
   #     @orders=Order.all
   #   end
   def index
-    @orders = Order.where(user_id: current_user)
+    # @orders = Order.where(user_id: current_user || seller_id: current_seller)
+    @orders = Order.where("user_id = ? OR seller_id = ?", current_user, current_seller)
+
     # @orders = Order.all
   end
 

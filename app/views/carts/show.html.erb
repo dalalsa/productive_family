@@ -4,6 +4,7 @@
   Item: <%= item.product.name %>
   Price: <%= number_to_currency(item.product.price) %>
   Quantity: <%= item.quantity %>
+  seller_id: <%= item.product.seller_id%>
   <%#= link_to "Add one", item_add_path(:id => item), method: :post %>
   <%#= link_to "Reduce one", item_reduce_path(:id => item), method: :post %>
   <%#= link_to "Remove item", item_path(item), method: :delete %>
