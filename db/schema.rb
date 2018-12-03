@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_070243) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "seller_id"
   end
 
   create_table "overall_averages", force: :cascade do |t|
@@ -127,4 +128,5 @@ ActiveRecord::Schema.define(version: 2018_12_03_070243) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
+
 end
