@@ -9,4 +9,5 @@ class Seller < ApplicationRecord
   has_many :products
   ratyrate_rateable "quality", "delviry_cost", "price_for_quality"
   has_many :orders
+  mount_uploader :img, ImageUploader
 end
