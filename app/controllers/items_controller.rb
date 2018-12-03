@@ -11,9 +11,14 @@ class ItemsController < ApplicationController
     @item = current_cart.items.find_by(:product_id => chosen_product.id)
     @item.quantity += 1
   else
-    @item = Item.new(item_params)
-    @item.cart = current_cart
-    @item.product = chosen_product
+    if current_cart.seller_id == chosen_product.seller.id || current_cart.seller_id.nil?
+      # If the item that you are about to add is associated with a different seller than the first item in the cart
+      @item = Item.new(item_params)
+      @item.cart = current_cart
+      @item.product = chosen_product
+    else
+      raise "a"
+    end
   end
   @item.save
       # item = current_cart.items.create(item_params)

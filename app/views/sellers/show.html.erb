@@ -19,14 +19,17 @@
           <p> Price: <%= product.price %></p>
           <%#= product.items.quantity %>
           <%# </div> %>
-          <div>
-            <%= button_to "Add #{product.name} to cart", items_path(:product_id => product.id) %></div>
+          <% if @current_cart.seller_id == product.seller.id || @current_cart.seller_id.nil?%>
+            <div>
+              <%= button_to "Add #{product.name} to cart", items_path(:product_id => product.id) %></div>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 <% end %>
 <% end %>
+<%= @current_cart.products.name %>
 <!-- orders history-->
 <%#= imdb_style_rating_for @seller, current_user%>
 <%# if current_user %>
