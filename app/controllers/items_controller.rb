@@ -22,9 +22,8 @@ class ItemsController < ApplicationController
   end
   @item.save
       # item = current_cart.items.create(item_params)
-
-  redirect_to cart_path(current_cart)
-
+  # redirect_to cart_path(current_cart)
+ redirect_to request.referrer
 end
 def add_quantity
   @item = Item.find(params[:id])

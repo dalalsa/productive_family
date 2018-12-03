@@ -7,8 +7,8 @@
     <p> <%= link_to "Update User", edit_user_registration_path %> </p>
     <h3>Orders History </h3>
     <% current_user.orders.each do |order| %>
-      <%= order.id %>
+      Order: <%= order.id %>
       <br>
-      <%= order.status %>
+      Order status:  <%= order.status %>
     <% end %>
   <% end %>

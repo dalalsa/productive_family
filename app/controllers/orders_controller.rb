@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController #   def index
-  #     @orders=Order.all
-  #   end
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     # @orders = Order.where(user_id: current_user || seller_id: current_seller)
     # @orders = Order.where("user_id = ? OR seller_id = ?", current_user, current_seller)
@@ -37,7 +37,10 @@ class OrdersController < ApplicationController #   def index
    
     order = current_user.orders.new(status: "pending")
     order.item_ids = @current_cart.item_ids
+
     order.save
+   @current_cart.destroy
+  
 
     # raise "text"
 

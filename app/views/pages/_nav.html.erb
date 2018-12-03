@@ -1,36 +1,35 @@
 <nav>
-    <div class="nav-wrapper #424242 grey darken-3">
-      <%=  link_to "Logo", root_path %>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-
-      <div> 
-      <ul> 
-       
-        <% unless user_signed_in? %>
-             <% if seller_signed_in? %>
-
-            
-             <li><a><%= link_to "View Profile ", seller_path(current_seller) %></a></li>
-             <li><a><%= link_to 'Log Out', destroy_seller_session_path, method: :delete %> </a></li>
+  <div class="nav-wrapper #424242 grey darken-3">
+    <%=  link_to "Logo", root_path %>
+    <%#= console %>
+    <%= link_to(image_tag("cart.png", :size => "20x20"), @current_cart) %>
+    <% if @current_cart.items.count > 0 %>
+      <%=  @current_cart.items.count %>
+    <% else %>
+      <%= 0 %>
+    <% end %>
+    <%#= image_submit_tag("cart.png") %>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <div>
+        <ul>
+          <% unless user_signed_in? %>
+            <% if seller_signed_in? %>
+              <li><a><%= link_to "View Profile ", seller_path(current_seller) %></a></li>
+              <li><a><%= link_to 'Log Out', destroy_seller_session_path, method: :delete %> </a></li>
             <% else %>
-             <li><a><%= link_to "Join us as Seller", new_seller_registration_path %></a></li>
+              <li><a><%= link_to "Become a Seller", new_seller_registration_path %></a></li>
             <% end %>
-            <% end %>
-
-        <% unless seller_signed_in? %>
-              <%if user_signed_in? %>
-
-            <li><a><%= link_to "View Profile user ", user_path(current_user) %></a></li>
-            <li><a><%= link_to 'Log Out user', destroy_user_session_path, method: :delete %></a></li>
-            
+          <% end %>
+          <% unless seller_signed_in? %>
+            <%if user_signed_in? %>
+              <li><a><%= link_to "View Profile user ", user_path(current_user) %></a></li>
+              <li><a><%= link_to 'Log Out user', destroy_user_session_path, method: :delete %></a></li>
             <% else %>
-            <li><a><%= link_to "Log in user", new_user_session_path %></a></li>
-            <li><a><%= link_to "Sign Up user", new_user_registration_path %></a></li>
+              <li><a><%= link_to "Log in user", new_user_session_path %></a></li>
+              <li><a><%= link_to "Sign Up user", new_user_registration_path %></a></li>
             <% end %>
-            <% end %>
-            </ul>
+          <% end %>
+        </ul>
+      </div>
     </div>
-    </div>
-</nav>
-
-
+  </nav>

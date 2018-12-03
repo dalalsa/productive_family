@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :orders
   ratyrate_rater
-  validates_presence_of     :username, :full_name, :address 
-
+  validates_presence_of     :username, :full_name, :address
+   
+  geocoded_by :address       # can also be an IP address
+  after_validation :geocode  # auto-fetch coordinates
 end
