@@ -14,7 +14,19 @@
  *= require_self
  */
 .brand-logo {
-    margin: 0px 30px;
+  margin: 0px 30px;
 }
 
+body {
+  font-family: monospace;
+}
 
+.serllerspage {
+  height: 632px;
+  width: 100%;
+  position: relative;
+}
+.intro {
+  width: 100%;
+  height: 615px;
+}

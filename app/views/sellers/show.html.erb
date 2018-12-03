@@ -1,37 +1,34 @@
-
-
 <%if seller_signed_in?%>
   <%= render partial: 'seller_show' %>
   <% @seller.products.each do |p| %>
     <%= p.name %>
     <%= link_to 'Delete', product_path(p), method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to 'Edit', edit_product_path(p)%>
-<%end %>
+  <%end %>
 <% else %>
-  <h3><%= @seller.name %> <span><%= rating_for @seller, "quality", stars: 10 %> </span> </h3>
-    <%#= imdb_style_rating_for @seller, current_user%> 
-
-
-  <h5>Our products:   </h5> 
-  <div class="row">
+  <h5>All Products by the <%= @seller.username %>:</h5>
   <% @seller.products.each do |product| %>
-  <div class="col s8">
-      <%= product.name %>
-      <p> Price: <%= product.price %> S.R</p>
-      <%#=  cl_image_tag(product.image, :width => 70, :height => 70) %> 
-      <%#= console %>
-
-      <div><%= button_to "Add #{product.name} to cart", items_path(:product_id => product.id) %></div>
-        <%#= link_to "Add one", item_add_path(:item_id => item.id), method: :post %>
-        <%#= link_to "Reduce one", item_reduce_path(:id => item), method: :post %>
+    <div class="row">
+      <div class="col s12 m7">
+        <div class="card">
+          <div class="card-image">
+            <%=  image_tag(product.image.url, :width => 50, :height => 70) %>
+          </div>
+          <%# <div class="card-content"> %>
+          <%= product.name %>
+          <p> Price: <%= product.price %></p>
+          <%#= product.items.quantity %>
+          <%# </div> %>
+          <div>
+            <%= button_to "Add #{product.name} to cart", items_path(:product_id => product.id) %></div>
+        </div>
       </div>
-  <% end %>
-  <% end %>
+    </div>
   </div>
-  </div>
-
-
+<% end %>
+<% end %>
 <!-- orders history-->
+<<<<<<< HEAD
 
     
  
@@ -41,3 +38,14 @@
     <%## end %>
 
  
+=======
+<%#= imdb_style_rating_for @seller, current_user%>
+<%# if current_user %>
+<%# quality: <%= rating_for @seller, "quality", stars: 10 %>
+<%# <br> %>
+<%# delviry cost: <%= rating_for @seller, "delviry_cost" %>
+<%# <br> %>
+<%# <br> %>
+<%# price for quality: <%= rating_for @seller, "price_for_quality" %>
+<%# <% end %>
+>>>>>>> efb4f3e0e0cf3686334c2e2a608bf1be205d97dc
