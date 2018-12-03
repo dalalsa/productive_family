@@ -1,8 +1,7 @@
 <% @cart.items.each do |item| %>
- Item: <%= item.product.name %>
+  Item: <%= item.product.name %>
   Price: <%= number_to_currency(item.product.price) %>
   Quantity: <%= item.quantity %>
-
 <% end %>
 <h2>Total</h2>
 <h3>Current Address</h3>
@@ -32,10 +31,11 @@
   } else {
     console.log("geolocation is not supported ");
   }
+  
+  <%# results = Geocoder.search([48.856614, 2.3522219])
+  results.first.address %>
   }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.dig(:google_maps_api_key) %>&callback=getAddress"
     async defer></script>
-
-
 <%= button_to "buy" , orders_path(@order), method: :post %>

@@ -16,7 +16,7 @@ class OrdersController < ApplicationController #   def index
     @order = Order.new
     @cart = @current_cart
 
-    raise
+    # raise
   end
 
   def approve
