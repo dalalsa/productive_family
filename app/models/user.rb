@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :orders
   ratyrate_rater
-  
+  validates_presence_of     :username, :full_name, :address 
+
 end

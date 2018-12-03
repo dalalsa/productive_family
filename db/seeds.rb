@@ -9,7 +9,7 @@ Order.destroy_all
 # Product.create(name: "soda", image:"dgbgdd", price: 2342, category: "مالح", description: "cakes for best taste", seller_id: 4 );
 # Order.create(user_id: 1, status: "pending");
 # Item.create(product_id: 10,order_id:1, cart_id: 1 , quantity:2 );
-
+Seller.create(name: "Bakery Cup", email: "nour3_@hotmail.com",username: "Bakery_Cup", delivery_cost: 30, img: 'bakry.png',description: "bakery")
 # Item.create(: 1, status: "pending");
 # Product.create(name: "cakes store", image:"ddddd", price: 22, category: "sweet", description: "cakes for best taste", seller_id: 4 );
 # Product.create(name: "cakes store", image:"ddddd", price: 22, category: "sweet", description: "cakes for best taste", seller_id: 4 );
