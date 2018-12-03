@@ -1,14 +1,17 @@
 <div class="container">
-<div class="seller-regis">
 
+<!--<div class="seller-regis"> -->
+ 
 <h4>Sign up</h4>
-app/views/sellers/registrations/new.html.erb
+
+
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
 <h5> Log In Information </h5>
       <div class="field">
-            <%= f.label :username, "Enter Your Username" %>   <br> 
+            <%= f.label :username, " Username" %>   <br> 
             <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
       </div>
 
@@ -32,7 +35,7 @@ app/views/sellers/registrations/new.html.erb
       <div>
             <h5>Store information</h5>  
       <div class="field">
-            <%= f.label :name, "Your store name"%>  <br>
+            <%= f.label :name,  "Your store name"%>  <br>
             <%= f.text_field :name %>
       </div> 
       <div class="field">
@@ -59,7 +62,6 @@ app/views/sellers/registrations/new.html.erb
             <%= f.submit "Sign up" %>
       </div>
 <% end %>
-
+</div>
+</div>
 <%= render "sellers/shared/links" %>
- </div>
- </div>
