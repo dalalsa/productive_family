@@ -1,10 +1,11 @@
-<div class="container">
-  <div >
-    <h4>Sign up</h4>
-    app/views/sellers/registrations/new.html.erb
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
-      <h5> Log In Information </h5>
+
+
+<h4>Sign up</h4>
+app/views/sellers/registrations/new.html.erb
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+<h5> Log In Information </h5>
       <div class="field">
         <%= f.label :username, "Enter Your Username" %>   <br>
         <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
