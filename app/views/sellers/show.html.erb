@@ -1,12 +1,16 @@
 <%if seller_signed_in?%>
   <%= render partial: 'seller_show' %>
+  
   <% @seller.products.each do |p| %>
     <%= p.name %>
     <%= link_to 'Delete', product_path(p), method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to 'Edit', edit_product_path(p)%>
   <%end %>
 <% else %>
-  <h5>All Products by the <%= @seller.username %>:</h5>
+  <h5>All Products by <%= @seller.username %>:</h5>
+  <%= imdb_style_rating_for @seller, current_user%>
+   Rate: <%= rating_for @seller, "quality", stars: 10 %>
+
   <% @seller.products.each do |product| %>
     <div class="row">
       <div class="col s12 m7">
@@ -28,24 +32,5 @@
 <% end %>
 <% end %>
 <!-- orders history-->
-<<<<<<< HEAD
 
-    
- 
-    <%# if current_user %>
-      quality: 
-      
-    <%## end %>
-
- 
-=======
-<%#= imdb_style_rating_for @seller, current_user%>
 <%# if current_user %>
-<%# quality: <%= rating_for @seller, "quality", stars: 10 %>
-<%# <br> %>
-<%# delviry cost: <%= rating_for @seller, "delviry_cost" %>
-<%# <br> %>
-<%# <br> %>
-<%# price for quality: <%= rating_for @seller, "price_for_quality" %>
-<%# <% end %>
->>>>>>> efb4f3e0e0cf3686334c2e2a608bf1be205d97dc
