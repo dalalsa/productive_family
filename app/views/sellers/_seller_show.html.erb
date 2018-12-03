@@ -1,10 +1,14 @@
 <h1>Seller dashboard</h1>
+
+
+
+<%= console %>
+<h4> welcome <%= @seller.name %> </h4>
+
 <% show_item.each do |item|%>
-
 <h2><%= item.quantity%></h2>
-
-
 <%end %>
+
 
 <%= link_to 'add product', new_product_path	 %>
 

@@ -1,13 +1,15 @@
 <nav>
     <div class="nav-wrapper #424242 grey darken-3">
-      <a href="#" class="brand-logo">Logo</a>
+      <%=  link_to "Logo", root_path %>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 
       <div> 
+      <ul> 
+       
         <% unless user_signed_in? %>
              <% if seller_signed_in? %>
 
-            <ul> 
+            
              <li><a><%= link_to "View Profile ", seller_path(current_seller) %></a></li>
              <li><a><%= link_to 'Log Out', destroy_seller_session_path, method: :delete %> </a></li>
             <% else %>
@@ -20,6 +22,7 @@
 
             <li><a><%= link_to "View Profile user ", user_path(current_user) %></a></li>
             <li><a><%= link_to 'Log Out user', destroy_user_session_path, method: :delete %></a></li>
+            
             <% else %>
             <li><a><%= link_to "Log in user", new_user_session_path %></a></li>
             <li><a><%= link_to "Sign Up user", new_user_registration_path %></a></li>
