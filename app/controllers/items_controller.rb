@@ -35,6 +35,13 @@ def reduce_quantity
   @item.save
   redirect_to cart_path(@current_cart)
 end
+
+def destroy
+  @item = Item.find(params[:id])
+  @item.destroy
+  redirect_to cart_path(@current_cart)
+end  
+
   private
 
   def item_params
