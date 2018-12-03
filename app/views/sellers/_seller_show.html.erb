@@ -1,15 +1,23 @@
 <h1>Seller dashboard</h1>
-
-
-
 <%= console %>
 <h4> welcome <%= @seller.name %> </h4>
-
-<% show_item.each do |item|%>
-<h2><%= item.quantity%></h2>
-<%end %>
-
-
+<% current_seller.orders.each do |order| %>
+  <%#= order.id %>
+  <%# <br> %>
+  <%#= order.status %>
+  <%# <br> %>
+  <% order.items.each do |item |%>
+    Order:
+    <%= item.id %>
+    <br>
+    <%= item.product.name %>
+    <br>
+    <%= order.user.username %>
+    <br>
+    <%= order.user.address %>
+  <% end%>
+  <br>
+<% end %>
 <%= link_to 'add product', new_product_path	 %>
-
-
+<%#= button_to "Approve" , "/orders/#{order.id}/approve", method: :put %>
+<%#= button_to "Reject" , "/orders/#{order.id}/reject", method: :put %>

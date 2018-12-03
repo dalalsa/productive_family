@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
       @item.cart = current_cart
       @item.product = chosen_product
     else
-      raise "a"
+      # raise "a"
     end
   end
   @item.save

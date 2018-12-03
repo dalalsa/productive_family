@@ -1,22 +1,18 @@
 <table>
-<tr>
+  <tr>
     <th>Product</th>
     <th>Price</th>
     <th>Quantity</th>
   </tr>
-<% @cart.items.each do |item| %>
-
-  <tr>
-    <td><%= item.product.name %></td>
-    <td><%= number_to_currency(item.product.price) %></td>
-    <td><%= item.quantity %></td>
-  </tr>
-<% end %>
+  <% @cart.items.each do |item| %>
+    <tr>
+      <td><%= item.product.name %></td>
+      <td><%= number_to_currency(item.product.price) %></td>
+      <td><%= item.quantity %></td>
+    </tr>
+  <% end %>
 </table>
-
-
-
-<h2>Total:  <%= number_to_currency(@cart.sub_total) %></h2> 
+<h2>Total:  <%= number_to_currency(@cart.sub_total) %></h2>
 <h3>Current Address</h3>
 <div id="map" style="width: 400px; height: 400px"></div>
 <script>
@@ -28,6 +24,7 @@
       let longResult = position.coords.longitude;
       console.log("lat " + latResult, "long " + longResult);
       //   let result = latResult + "," + longResult;
+  
       let myLatlng = new google.maps.LatLng(latResult, longResult);
       let map = new google.maps.Map(document.getElementById("map"), {
         center: myLatlng,
@@ -51,6 +48,8 @@
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.dig(:google_maps_api_key) %>&callback=getAddress"
     async defer></script>
-<%= button_to "buy" , user_path(current_user) %> 
-<%# method: :post%>
-<% console %>
+<%= button_to "buy" , orders_path(@order), method: :post %>
+
+ <%# results = Geocoder.search([48.856614, 2.3522219]) %>
+<%# results.first.address %>
+ 

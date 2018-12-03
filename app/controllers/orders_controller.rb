@@ -35,7 +35,10 @@ class OrdersController < ApplicationController #   def index
 
   def create
    
-    order = current_user.orders.create(status: "pending")
+    order = current_user.orders.new(status: "pending")
+    order.item_ids = @current_cart.item_ids
+    order.save
+
     # raise "text"
 
     redirect_to root_path
