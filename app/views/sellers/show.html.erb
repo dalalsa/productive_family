@@ -1,37 +1,29 @@
 
 <%if seller_signed_in?%>
   <%= render partial: 'seller_show' %>
-  
-  <% @seller.products.each do |p| %>
-    <%= p.name %>
-    <%= link_to 'Delete', product_path(p), method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= link_to 'Edit', edit_product_path(p)%>
-  <%end %>
 <% else %>
   <h5>All Products by <%= @seller.username %>:</h5>
   <%= imdb_style_rating_for @seller, current_user%>
-   Rate: <%= rating_for @seller, "quality", stars: 10 %>
-
+  Rate: <%= rating_for @seller, "quality", stars: 10 %>
   <% @seller.products.each do |product| %>
     <div class="row">
       <div class="col s12 m7">
         <div class="card">
           <div class="card-image">
-            <%=  image_tag(product.image.url, :width => 50, :height => 70) %>
+            <%=  cl_image_tag product.image.url %>
           </div>
           <%# <div class="card-content"> %>
           <%= product.name %>
           <p> Price: <%= product.price %></p>
           <%#= product.items.quantity %>
           <%# </div> %>
-          <div>
-            <%= button_to "Add #{product.name} to cart", items_path(:product_id => product.id) %></div>
+          <% if @current_cart.seller_id == product.seller.id || @current_cart.seller_id.nil?%>
+            <div>
+              <%= button_to "Add #{product.name} to cart", items_path(:product_id => product.id) %></div>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 <% end %>
 <% end %>
-<!-- orders history-->
-
-<%# if current_user %>

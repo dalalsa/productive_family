@@ -1,26 +1,42 @@
-class OrdersController < ApplicationController #   def index
-  #     @orders=Order.all
-  #   end
-  def index
-    # @orders = Order.where(user_id: current_user || seller_id: current_seller)
-    @orders = Order.where("user_id = ? OR seller_id = ?", current_user, current_seller)
+class OrdersController < ApplicationController 
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
-    # @orders = Order.all
+  def index
+   
+    # @order = Order.find_by(id: 1)
+
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.find_by(id: params[:id])
   end
 
   def new
+     
     @order = Order.new
     @cart = @current_cart
 
+    if request.location.ip == "127.0.0.1"
+      @location = Geocoder.search(request.ip)[0]
+    current_user.address = @location.address
+   
+   
+      current_user.latitude = @location.latitude
+      current_user.longitude = @location.longitude
+       current_user.save
+    else
+      if !current_user.address.include?("riyadh")
+        @location = request.location
+        current_user.address = @location.address
+      end
+     
+    end
     # raise
+    
   end
 
   def approve
-    raise "text"
+    #raise "text"
     order = Order.find_by(id: params[:id])
     order.status = "Approved"
     order.save
@@ -33,22 +49,18 @@ class OrdersController < ApplicationController #   def index
   end
 
   def create
+ 
+    order = current_user.orders.new(status: "pending")
+    order.item_ids = @current_cart.item_ids
+    order.save
+    # raise "a"
+   @current_cart.destroy
+  
+
     # raise "text"
-    order = current_user.orders.create(status: "pending")
 
-    # @current_cart.items.each do |item|
-    #   @order.items << item
-    #   item.cart_id = nil
-    # end
-
-    # Cart.destroy(session[:cart_id])
-    # session[:cart_id] = nil
-    # redirect_to root_path
+    redirect_to root_path
   end
 
-  # private
 
-  # def order_params
-  #   params.require(:order).permit(:user_id, :status => "p")
-  # end
 end

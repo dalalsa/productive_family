@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2018_12_03_070243) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "seller_id"
   end
 
   create_table "overall_averages", force: :cascade do |t|
@@ -62,10 +61,10 @@ ActiveRecord::Schema.define(version: 2018_12_03_070243) do
     t.string "image"
     t.integer "price"
     t.string "category"
+    t.integer "seller_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
-    t.integer "seller_id"
   end
 
   create_table "rates", force: :cascade do |t|
@@ -118,6 +117,8 @@ ActiveRecord::Schema.define(version: 2018_12_03_070243) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"

@@ -11,15 +11,19 @@ class ItemsController < ApplicationController
     @item = current_cart.items.find_by(:product_id => chosen_product.id)
     @item.quantity += 1
   else
-    @item = Item.new(item_params)
-    @item.cart = current_cart
-    @item.product = chosen_product
+    if current_cart.seller_id == chosen_product.seller.id || current_cart.seller_id.nil?
+      # If the item that you are about to add is associated with a different seller than the first item in the cart
+      @item = Item.new(item_params)
+      @item.cart = current_cart
+      @item.product = chosen_product
+    else
+      # raise "a"
+    end
   end
   @item.save
       # item = current_cart.items.create(item_params)
-
-  redirect_to cart_path(current_cart)
-
+  # redirect_to cart_path(current_cart)
+ redirect_to request.referrer
 end
 def add_quantity
   @item = Item.find(params[:id])
@@ -35,6 +39,13 @@ def reduce_quantity
   @item.save
   redirect_to cart_path(@current_cart)
 end
+
+def destroy
+  @item = Item.find(params[:id])
+  @item.destroy
+  redirect_to cart_path(@current_cart)
+end  
+
   private
 
   def item_params

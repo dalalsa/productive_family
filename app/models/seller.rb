@@ -8,6 +8,8 @@ class Seller < ApplicationRecord
 validates_presence_of     :username, :name, :delivery_cost,:description, :phone
   has_many :products
   ratyrate_rateable "quality"
-  has_many :orders
+  # has_many :orders
+    has_many :items, through: :products
+    has_many :orders, through: :items
   mount_uploader :img, ImageUploader
 end

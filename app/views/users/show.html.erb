@@ -1,15 +1,25 @@
 
 <div>
 <p>
-<% if user_signed_in? %>
-  <p>You are logged in as:
-  <%= current_user.full_name %>
-   </p>
-   <p> Your email: <%= current_user.email %> </p>
-   <button class="waves-effect #00695c teal darken-3 btn-small"><%= link_to "Update User", edit_user_registration_path %></button> 
-   <div class="divider"></div>
-   <h5>Orders History </h5>
-   
+  <% if user_signed_in? %>
+    <p>You are logged in as:
+      <%= current_user.full_name %>
+    </p>
+    <p> Your email: <%= current_user.email %> </p>
+    <p> <%= link_to "Update User", edit_user_registration_path %> </p>
+    <h3>Orders History </h3>
+    <div class="row" >
+      <% current_user.orders.each do |order| %>
+        <div class="col s8">
+          <div class="card">
+            <div class="card_content">
+              Order: <%= order.id %>
+              Order status:  <%= order.status %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 </div>
 

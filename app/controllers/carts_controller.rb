@@ -1,4 +1,6 @@
 class CartsController < ApplicationController
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def show
     @cart = @current_cart
     
