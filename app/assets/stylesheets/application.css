@@ -18,7 +18,7 @@
 }
 
 body {
-  font-family: monospace;
+font-family: 'Nunito', sans-serif;
 }
 
 .serllerspage {
@@ -29,4 +29,16 @@ body {
 .intro {
   width: 100%;
   height: 615px;
+}
+
+button {
+  margin: 10px 0px 30px 0px;
+}
+
+a {
+  color: rgb(163, 158, 158);
+}
+
+input{
+  color:  rgb(163, 158, 158);
 }

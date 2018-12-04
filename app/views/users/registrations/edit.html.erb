@@ -1,4 +1,13 @@
+<<<<<<< HEAD
+<div class = "row">
+<div class = "col s6">
+<div>
+<h4 class="left">Update <%= resource_name.to_s.humanize %>'s Profile</h4></div>
+<br><br><br><br>
+
+=======
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
+>>>>>>> d63e726f661f3004449f26471593133e2dbb67f8
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
   <div class="field">
@@ -29,9 +38,15 @@
     <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
   </div>
   <div class="actions">
-    <%= f.submit "Update" %>
+    <button class="waves-effect #00695c teal darken-3 btn-small"><%= f.submit "Update" %></button>
   </div>
 <% end %>
-<h3>Cancel my account</h3>
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<h4 class="left">Cancel my account</h4>
+<br><br><br>
+
+<p>Unhappy? <br> <button class="waves-effect #00695c teal darken-3 btn-small"><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></button></p>
+
 <%= link_to "Back", :back %>
+</div>
+</div>
