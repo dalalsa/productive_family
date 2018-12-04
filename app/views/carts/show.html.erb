@@ -2,9 +2,7 @@
 <h2>Cart show</h2>
 <hr>
  <h4>  Store: <%= @cart.items.first.product.seller.name %> </h4>
-
-
-  <table>
+  <table class= "responsive-table  highlight">
 
         <thead>
           <tr>
@@ -12,26 +10,24 @@
               <th>Item Price</th>
               <th>Quantity</th>
               <th>Edit</th>
-
           </tr>
-
         </thead>
-        <% @cart.items.each do |item| %> 
+  
         <tbody>
        
+            <% @cart.items.each do |item| %> 
             <tr>
               <td><%= item.product.name %></td> 
               <td><%= number_to_currency(item.product.price) %></td>
-              <td>Quantity: <%= item.quantity %></td>
+              <td> <%= item.quantity %></td>
               <td><%= link_to "Add", item_add_path(:id => item), method: :post %>
               <%= link_to "Reduce ", item_reduce_path(:id => item), method: :post %>
               <%= link_to "Remove", item_path(item), method: :delete %></td>
             </tr>
+        <% end %>
           </tbody>
   </table>
-
-        <% end %>
-  <hr>
+  
   <h3>Total: <%= number_to_currency(@cart.sub_total) %></h3>
   <%= link_to "Proceed to checkout", new_order_path %><br>
   <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
