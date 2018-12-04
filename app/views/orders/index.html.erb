@@ -1,32 +1,20 @@
 <% if seller_signed_in? %>
-<h2>All Orders</h2>
-
-<% @orders.each do |order| %>
-  <p>Order Id: <%= order.id %></p>
-   <p>Seller Id: <%= order.seller_id%></p>
-  <p>Order Stauts: <%= order.status %></p>
-  <%= button_to "Approve" , "/orders/#{order.id}/approve", method: :put %>
-  <%= button_to "Reject" , "/orders/#{order.id}/reject", method: :put %>
-
-  <p>Line Items: </p>
-  
- <% end %>
- <% end %>
-
-
+  <h2>All Orders</h2>
+  <% @orders.each do |order| %>
+    <p>Order Id: <%= order.id %></p>
+    <p>Seller Id: <%= order.seller_id%></p>
+    <p>Order Stauts: <%= order.status %></p>
+    <%= button_to "Approve" , "/orders/#{order.id}/approve", method: :put %>
+    <%= button_to "Reject" , "/orders/#{order.id}/reject", method: :put %>
+    <p>Line Items: </p>
+  <% end %>
+<% end %>
 <% if user_signed_in? %>
-<h2>All Orders</h2>
-<%= console %>
-<% @orders.each do |order| %>
-  <p>Order Id: <%= order.id %></p>
-  <p>Order Stauts: <%= order.status %></p>
- 
-
-  <p>Line Items: </p>
-  
- <% end %>
- <% end %>
-
- 
-
-
+  <h2>All Orders</h2>
+  <%= console %>
+  <% @orders.each do |order| %>
+    <p>Order Id: <%= order.id %></p>
+    <p>Order Stauts: <%= order.status %></p>
+    <p>Line Items: </p>
+  <% end %>
+<% end %>

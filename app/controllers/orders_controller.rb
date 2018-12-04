@@ -1,22 +1,23 @@
 class OrdersController < ApplicationController #   def index
-  #     @orders=Order.all
-  #   end
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     # @orders = Order.where(user_id: current_user || seller_id: current_seller)
-    @orders = Order.where("user_id = ? OR seller_id = ?", current_user, current_seller)
+    # @orders = Order.where("user_id = ? OR seller_id = ?", current_user, current_seller)
+    @order = Order.find_by(id: 1)
 
     # @orders = Order.all
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.find_by(id: params[:id])
   end
 
   def new
     @order = Order.new
     @cart = @current_cart
 
-    # raise
+    
   end
 
   def approve
@@ -33,17 +34,17 @@ class OrdersController < ApplicationController #   def index
   end
 
   def create
+   
+    order = current_user.orders.new(status: "pending")
+    order.item_ids = @current_cart.item_ids
+
+    order.save
+   @current_cart.destroy
+  
+
     # raise "text"
-    order = current_user.orders.create(status: "pending")
 
-    # @current_cart.items.each do |item|
-    #   @order.items << item
-    #   item.cart_id = nil
-    # end
-
-    # Cart.destroy(session[:cart_id])
-    # session[:cart_id] = nil
-    # redirect_to root_path
+    redirect_to root_path
   end
 
   # private

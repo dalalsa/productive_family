@@ -1,6 +1,6 @@
 <div class = "serllerspage ">
   <div>
-    <%= cl_image_tag("default.png", :class => "intro") %>
+    <%= image_tag("default.png", :class => "intro") %>
   </div>
 </div>
 <div class="services row  top-marging">
@@ -9,14 +9,15 @@
       <%# <div class="col s4"> %>
       <div class="card small card-panel hoverable" >
         <div class="card-image">
-          <%=  seller.img %>
+          <%=  image_tag(seller.img.url) %>
         </div>
         <%# <div class="card-content"> %>
         Name: <%= seller.name %>
         <br>
         Description: <%= seller.description %>
         <%# </div> %>
-        <div>               <%= link_to 'More details', seller_path(seller) %>
+        <div>
+          <%= link_to 'More details', seller_path(seller) %>
         </div>
       </div>
       <%# </div> %>

@@ -1,10 +1,14 @@
 <p>
-<% if user_signed_in? %>
-  <p>You are logged in as:
-  <%= current_user.full_name %>
-   </p>
-   <p> Your email: <%= current_user.email %> </p>
-   <p> <%= link_to "Update User", edit_user_registration_path %> </p>
-   <h3>Orders History </h3>
-   
+  <% if user_signed_in? %>
+    <p>You are logged in as:
+      <%= current_user.full_name %>
+    </p>
+    <p> Your email: <%= current_user.email %> </p>
+    <p> <%= link_to "Update User", edit_user_registration_path %> </p>
+    <h3>Orders History </h3>
+    <% current_user.orders.each do |order| %>
+      Order: <%= order.id %>
+      <br>
+      Order status:  <%= order.status %>
+    <% end %>
   <% end %>

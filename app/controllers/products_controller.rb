@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   
   
   def index
-@products=Product.all
+@products=Product.where(seller_id: current_seller)
   end
 
   def show
