@@ -2,7 +2,7 @@
 ## README
 
 ## App Name
-Supper
+# Supper
 It an online store that allows small business to sell their products online
 aimed for productive families and individuals who work from home
  
