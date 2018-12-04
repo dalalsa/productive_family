@@ -2,11 +2,11 @@
   <div>
     <%= image_tag("default.png", :class => "intro") %>
   </div>
-</div>
-<div class="services row  top-marging">
+</div> 
+<h3 class="center"> All Stores </h3>
   <% @sellers.each do |seller| %>
     <div class="row">
-      <%# <div class="col s4"> %>
+      <div class="col s4">
       <div class="card small card-panel hoverable" >
         <div class="card-image">
           <%=  image_tag(seller.img.url) %>
@@ -21,9 +21,11 @@
       
         <div>
           <%= link_to 'More details', seller_path(seller) %>
+        </div> 
+        </div>
         </div>
       </div>
-      <%# </div> %>
     <% end %>
   </div>
 </div>
+

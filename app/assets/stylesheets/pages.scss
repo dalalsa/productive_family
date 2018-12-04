@@ -2,33 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
-    
-  .page-footer {
-    padding-top: 10px;
-  }
+main {
+  flex: 1 0 auto;
+}
 
-  .page-footer .footer-copyright {
-    padding: 5px 0px;
-  }
+.page-footer {
+  padding-top: 10px;
+}
 
-  .page-footer{
-        margin: 60px 0px 0px 0px;
-  }
+.page-footer .footer-copyright {
+  padding: 5px 0px;
+}
+
+.page-footer {
+  margin: 60px 0px 0px 0px;
+}
 
 //   nav a {
 //     color: #945D60;
 // }
 
 nav ul a {
-    
-    color: #945D60;
-    
+  color: #945d60;
+}
+li > #count {
+  color: black;
 }
