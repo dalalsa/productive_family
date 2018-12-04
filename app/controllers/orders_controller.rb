@@ -19,8 +19,6 @@ class OrdersController < ApplicationController
     if request.location.ip == "127.0.0.1"
       @location = Geocoder.search(request.ip)[0]
     current_user.address = @location.address
-   
-   
       current_user.latitude = @location.latitude
       current_user.longitude = @location.longitude
        current_user.save
