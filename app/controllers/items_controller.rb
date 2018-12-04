@@ -8,8 +8,9 @@ class ItemsController < ApplicationController
   # seller = chosen_product.seller_id
   current_cart = @current_cart
   if current_cart.products.include?(chosen_product)
-    @item = current_cart.items.find_by(:product_id => chosen_product.id)
+  @item = current_cart.items.find_by(:product_id => chosen_product.id)
     @item.quantity += 1
+    
   else
     if current_cart.seller_id == chosen_product.seller.id || current_cart.seller_id.nil?
       # If the item that you are about to add is associated with a different seller than the first item in the cart
