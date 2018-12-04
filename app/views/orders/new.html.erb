@@ -13,23 +13,33 @@
   <% end %>
 </table>
 <h2>Total:  <%= number_to_currency(@cart.sub_total) %></h2>
-<h3>Current Address</h3>
+<h3>Your address</h3>
 <div id="map" style="width: 400px; height: 400px"></div>
 <%#= irb %>
 <script>
   function getAddress() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      //   console.log(position);
+  //if (navigator.geolocation) {
+    //navigator.geolocation.getCurrentPosition(function(position) {
+    //  console.log(<%=current_user%>);
       // let latResult = position.coords.latitude;
-      let latResult = <%= current_user.latitude %>
+      //let latResult = <%= current_user.latitude %>
       // if <%= !current_user.latitude %> do \
         // get me navigator.geolocation
       // let longResult = position.coords.longitude;
-      let longResult = <%= current_user.longitude %>
+      //let longResult = <%= current_user.longitude %>
       //   let result = latResult + "," + longResult;
   
        //console.log("lat " + latResult, "long " + longResult);
+   // <%if !current_user.address.include? "riyadh" %>
+      //    latResult = position.coords.latitude;
+        //  longResult = position.coords.longitude;
+    // <% end %>
+  let latResult = <%= @location.latitude %>
+  let longResult = <%= @location.longitude %>
+     //    console.log(`Current user address: <%= @location.longitude %>`);
+  
+  
+         // console.log("lat " + latResult, "long " + longResult);
   
       let myLatlng = new google.maps.LatLng(latResult, longResult);
       let map = new google.maps.Map(document.getElementById("map"), {
@@ -40,13 +50,13 @@
       let marker = new google.maps.Marker({
         position: myLatlng,
         map: map,
-        title: "current location"
+        title: "your location"
       });
   
-    });
-  } else {
-    console.log("geolocation is not supported ");
-  }
+    //});
+  //} else {
+  //  console.log("geolocation is not supported ");
+  //}
   
   }
 </script>

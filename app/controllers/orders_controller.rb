@@ -14,9 +14,24 @@ class OrdersController < ApplicationController #   def index
   end
 
   def new
+     
     @order = Order.new
     @cart = @current_cart
+    
+    if request.location.ip == "127.0.0.1"
+      @location = Geocoder.search(request.ip)[0]
+    #   @current_user.address = @location.address
 
+      # current_user.latitude = @location.latitude
+      # current_user.longitude = @location.longitude
+    else
+      if !current_user.address.include?("riyadh")
+        @location = request.location
+        current_user.address = @location.address
+    end
+     
+    end
+    # raise
     
   end
 
@@ -34,11 +49,11 @@ class OrdersController < ApplicationController #   def index
   end
 
   def create
-   
+ 
     order = current_user.orders.new(status: "pending")
     order.item_ids = @current_cart.item_ids
-
     order.save
+    # raise "a"
    @current_cart.destroy
   
 

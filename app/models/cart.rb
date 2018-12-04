@@ -1,5 +1,5 @@
 class Cart < ApplicationRecord
-    has_many :items, dependent: :destroy
+    has_many :items
     has_many :products, through: :items
     
   def seller_id
