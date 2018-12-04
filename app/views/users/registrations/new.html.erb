@@ -1,4 +1,8 @@
-<h2>Sign up</h2>
+
+<div class = "row">
+<div class = "col s6">
+<h4 class="left">Sign up as a Customer</h4>
+<br><br><br><br>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
   <div class="field">
@@ -29,7 +33,10 @@
     <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
   </div>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <button class="waves-effect #00695c teal darken-3 btn-small"><%= f.submit "Sign up" %></button>
   </div>
 <% end %>
+<p> Or log in if you already have an account</p>
 <%= render "users/shared/links" %>
+</div>
+</div>

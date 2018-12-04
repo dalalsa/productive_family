@@ -1,11 +1,12 @@
+<div class = "row">
+<div class = "col s6">
 
-
-<h4>Sign up</h4>
-app/views/sellers/registrations/new.html.erb
+<h4 class="left">Sign up as a Seller</h4>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+<br><br><br>
 <h5> Log In Information </h5>
+<br>
       <div class="field">
         <%= f.label :username, "Enter Your Username" %>   <br>
         <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
@@ -26,7 +27,9 @@ app/views/sellers/registrations/new.html.erb
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
       <div>
+      <br><br>
             <h5>Store information</h5>  
+            <br>
       <div class="field">
             <%= f.label :name,  "Your store name"%>  <br>
             <%= f.text_field :name %>
@@ -41,25 +44,26 @@ app/views/sellers/registrations/new.html.erb
       </div> 
 
       <div class="field">
-            <%= f.label :delivery_cost, "delivery cost " %> <br>
+            <%= f.label :delivery_cost, "Delivery cost " %> <br>
             <%= f.number_field :delivery_cost %>
       </div>  
       </div>      
       <div class="field">
-            <%= f.label :img,  "upload your logo"%>  <br>
+            <%= f.label :img,  "Upload your logo"%>  <br>
+            <br>         
             <%= f.file_field :img %>
       </div>  
-
-      </div>
-      <div class="field">
-        <%= f.label :img,  "upload your logo"%>  <br>
-        <%= f.file_field :img %>
-      </div>
-    </div>
+      <br>
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <button class="waves-effect #00695c teal darken-3 btn-small"><%= f.submit "Sign up" %></button>
     </div>
   <% end %>
-</div>
+  <p> OR </p>
 <%= render "sellers/shared/links" %>
+</div>
+</div>
+</div>
+</div>
+
+</div>
 </div>
