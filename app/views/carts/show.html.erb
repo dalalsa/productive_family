@@ -1,14 +1,38 @@
+<div class="container">
 <h2>Cart show</h2>
-<%#= console %>
-<% @cart.items.each do |item| %>
-  Item: <%= item.product.name %>
-  Price: <%= number_to_currency(item.product.price) %>
-  Quantity: <%= item.quantity %>
-  seller_id: <%= item.product.seller_id%>
-  <%= link_to "Add", item_add_path(:id => item), method: :post %>
-  <%= link_to "Reduce ", item_reduce_path(:id => item), method: :post %>
-  <%= link_to "Remove", item_path(item), method: :delete %>
-<% end %>
-<h3>total: <%= number_to_currency(@cart.sub_total) %></h3>
-<%= link_to "Proceed to checkout", new_order_path %><br>
-<%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
+<hr>
+ <h4>  Store: <%= @cart.items.first.product.seller.name %> </h4>
+
+
+  <table>
+
+        <thead>
+          <tr>
+              <th>Item Name</th>
+              <th>Item Price</th>
+              <th>Quantity</th>
+              <th>Edit</th>
+
+          </tr>
+
+        </thead>
+        <% @cart.items.each do |item| %> 
+        <tbody>
+       
+            <tr>
+              <td><%= item.product.name %></td> 
+              <td><%= number_to_currency(item.product.price) %></td>
+              <td>Quantity: <%= item.quantity %></td>
+              <td><%= link_to "Add", item_add_path(:id => item), method: :post %>
+              <%= link_to "Reduce ", item_reduce_path(:id => item), method: :post %>
+              <%= link_to "Remove", item_path(item), method: :delete %></td>
+            </tr>
+          </tbody>
+  </table>
+
+        <% end %>
+  <hr>
+  <h3>Total: <%= number_to_currency(@cart.sub_total) %></h3>
+  <%= link_to "Proceed to checkout", new_order_path %><br>
+  <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
+  </div>
