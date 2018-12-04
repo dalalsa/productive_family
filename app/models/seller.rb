@@ -6,6 +6,7 @@ class Seller < ApplicationRecord
 
   # validates :username, uniqueness: true
 validates_presence_of     :username, :name, :delivery_cost,:description, :phone
+validates :username, uniqueness: true
   has_many :products
   ratyrate_rateable "quality"
   # has_many :orders

@@ -8,6 +8,10 @@ class RaterController < ApplicationController
       render :json => true
     else
       render :json => false
+
     end
+
+
+
   end
 end
