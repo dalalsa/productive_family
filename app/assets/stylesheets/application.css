@@ -18,7 +18,8 @@
 }
 
 body {
-font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
+  color: black;
 }
 
 .serllerspage {
@@ -39,6 +40,9 @@ a {
   color: rgb(163, 158, 158);
 }
 
-input{
-  color:  rgb(163, 158, 158);
+input {
+  color: rgb(163, 158, 158);
+}
+#count {
+  color: black;
 }
