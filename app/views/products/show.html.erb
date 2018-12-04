@@ -1,3 +1,7 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
-<%= @product %>
+
+
+<%= @product.name %>
+<%= image_tag @product.image.url, :size => "300x300"%>
+<%= @product.price %>
+<%= @product.category %>
+<%= @product.description %>
