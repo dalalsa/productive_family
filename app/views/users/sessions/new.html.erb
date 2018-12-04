@@ -1,4 +1,8 @@
-<h2>Log in</h2>
+<div class = "row">
+<div class = "col s6">
+
+<h4 class="left">Log in as a Customer</h4>
+<br><br><br><br>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -17,10 +21,12 @@
       <%= f.label :remember_me %>
     </div>
   <% end -%>
-
+<br>
   <div class="actions">
-    <%= f.submit "Log in" %>
+     <button class="waves-effect #00695c teal darken-3 btn-small"><%= f.submit "Log in" %></button>
   </div>
 <% end %>
-
+<p> Or sign up if you do not have an account</p>
 <%= render "users/shared/links" %>
+</div>
+</div>

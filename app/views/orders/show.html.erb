@@ -1,5 +1,7 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<h1>Orders details</h1>
 <% @order.items.each do |item|%>
   <%= item.id %>
+  <%= item.quantity %>
+  <%= @order.user.username %>
+  <%= @order.user.address %>
 <% end %>

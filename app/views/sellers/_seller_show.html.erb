@@ -1,31 +1,58 @@
 <h1>Seller dashboard</h1>
-<%= console %>
 <h4> welcome <%= @seller.name %> </h4>
-<% current_seller.orders.each do |order| %>
-  <%#= order.id %>
-  <%# <br> %>
-  <%#= order.status %>
-  <%# <br> %>
-  <%= console %>
-  <% order.items.each do |item |%>
-    Order:
-    <%= item.id %>
-    <br>
-    <%= item.product.name %>
-    <br>
-    <%= order.user.username %>
-    <br>
-    <%= order.user.address %>
-  <% end%>
-  <br>
-<% end %>
-<%= link_to 'add product', new_product_path	 %>
-<br>
-<% @seller.products.each do |p| %>
-  <%= p.name %>
-  <%= link_to 'Delete', product_path(p), method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%= link_to 'Edit', edit_product_path(p)%>
-  <br>
-<%end %>
-<%#= button_to "Approve" , "/orders/#{order.id}/approve", method: :put %>
-<%#= button_to "Reject" , "/orders/#{order.id}/reject", method: :put %>
+<h3>Orders History </h3>
+<table>
+  <thead>
+    <tr>
+      <th>Order number</th>
+      <th>Order status</th>
+      <th>Approve</th>
+      <th>Reject</th>
+    </tr>
+  </thead>
+  <% current_seller.orders.each do |order| %>
+    <tbody>
+      <tr>
+        <td>
+          <%= link_to order.id, order_path(order) %>
+          <%#= order.id %>
+        </td>
+        <td>
+          <%= order.status %>
+        </td>
+        <td>
+          <%= button_to "Approve" , "/orders/#{order.id}/approve", method: :put %>
+        </td>
+        <td>
+          <%= button_to "Reject" , "/orders/#{order.id}/reject", method: :put %>
+        </td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>
+<table>
+  <thead>
+    <tr>
+      <th>Product name</th>
+      <th>Delete product</th>
+      <th>Edit product</th>
+    </tr>
+  </thead>
+  <% @seller.products.each do |p| %>
+    <tbody>
+      <tr>
+        <td>
+          <%= p.name %>
+          <%#= link_to p.name, product_path(p) %>
+        </td>
+        <td>
+          <%= link_to 'Delete', product_path(p), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_product_path(p)%>
+        </td>
+      </tr>
+    </tbody>
+  <%end %>
+</table>
+<%#= link_to 'add product', new_product_path	 %>
