@@ -15,9 +15,4 @@
           console.log("rating: ", rounded)
           ratingDiv.innerText = rounded
           */
-        let ratingDivs = document.querySelectorAll(".avg-rating");
-        for (const ratingDiv of ratingDivs) {
-            let rounded = Math.round(parseFloat(ratingDiv.innerText) * 10) / 10;
-        console.log('avgRating: ', rounded);
-        }
-     
+       
