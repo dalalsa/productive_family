@@ -27,7 +27,7 @@ link for the app on Herokuapp
 ## Database Structure
 
 
-# Apis used:
+# APIs:
 * Cloudinary
 * Google map with Geocoder
 More Features to add later
