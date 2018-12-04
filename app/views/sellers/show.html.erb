@@ -8,7 +8,7 @@
   <%end %>
 <% else %>
   <h5>All Products by <%= @seller.username %>:</h5>
-  <%= imdb_style_rating_for @seller, current_user%>
+  <%= imdb_style_rating_for @seller, current_user, imdb_avg: true%>
    Rate: <%= rating_for @seller, "quality", stars: 10 %>
 
   <% @seller.products.each do |product| %>

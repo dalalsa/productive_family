@@ -51,6 +51,4 @@
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.dig(:google_maps_api_key) %>&callback=getAddress"
     async defer></script>
-<%= button_to "buy" , user_path(current_user) %> 
-<%# method: :post%>
-<% console %>
+<%= button_to "buy" , user_path(current_user), method: :post %> 

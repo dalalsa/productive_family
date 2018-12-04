@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post "items/:id/add" => "items#add_quantity", as: "item_add"
   post "items/:id/reduce" => "items#reduce_quantity", as: "item_reduce"
   post "items" => "items#create"
+    
   get "items/:id" => "items#show", as: "item"
 
   delete "items/:id" => "items#destroy"
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
 
   put "/orders/:id/approve", to: "orders#approve"
   put "/orders/:id/reject", to: "orders#reject"
+  post "/orders/:id", to: "orders#create"
   resources :orders
 
   get "pages/home"
