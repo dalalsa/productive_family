@@ -24,10 +24,10 @@ aimed for productive families and individuals who work from home
 ## Demo
 link for the app on Herokuapp
 
-[link Heruko](https://i.imgur.com/mkGhL7Y.png)
+[link Heruko](https://thawing-ridge-57758.herokuapp.com/)
 
 ## Database Structure
-![data base structure](https://imgur.com/a/Ip1Ox72)
+![data base structure](https://i.imgur.com/mkGhL7Y.png)
 
 # APIs:
 * Cloudinary
