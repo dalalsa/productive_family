@@ -1,42 +1,45 @@
-# README 2
+### Productive Family
+## README
 
-Devise for Seller
+## App Name
+Supper
+It an online store that allows small business to sell their products online
+aimed for productive families and individuals who work from home
+ 
 
-Controller - app/controllers/sellers/...
-Views - app/views/sellers/...
+## Features
+# for customers side:
+* User can sign up and edit his profile
+* User can browse the stores and the products 
+* User can place an order 
+* User can send his location to the user
+* User can rate the seller
+# for Sellers side: 
+* Seller can sign up and edit his profile
+* Seller can add new product 
+* Seller can mange his/her products 
+* Seller can mange his/her orders  
 
-Sign In path: new_seller_session_path
-Sign Up path: new_seller_registration_path
-Edit path: edit_seller_registration_path
-Sellers Index: sellers_path (app/controllers/sellers_controller)
-Sellers Show: seller_path (app/controllers/sellers_controller)
 
-Devise for User
+## Demo
+link for the app on Herokuapp
 
-Controller - app/controllers/users/...
-Views - app/views/users/...
+## Database Structure
 
-Sign In path: new_user_session_path
-Sign Up path: new_user_registration_path
-Edit path: edit_user_registration_path
-Users Index: users_path (app/controllers/users_controller)
-Users Show: user_path (app/controllers/users_controller)
 
-class Item < ApplicationRecord
-belongs_to :order
-belongs_to :product
-  
-end
+# APIs:
+* Cloudinary
+* Google map with Geocoder
+More Features to add later
+* Add notification system 
 
-class Order < ApplicationRecord
-has_many :items
-end
 
-class Product < ApplicationRecord
-belongs_to :seller
-has_many :items
-end
-
-class Seller < ApplicationRecord
-has_many :products
-end
+## Credits
+* Devise for User Model in Rails
+* Cloudinary for files mangments
+* Herokuapp for hosting the app online
+* Materialize
+* Ratyrate gem for rating system 
+* Agile-web-development with rails 5 Book by Sam Ruby ,David Bryant with Dave Thomas
+* spiciel thanks to Jack Jeffres,Moath Althawad and Kane
+ 
