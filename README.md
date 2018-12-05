@@ -38,11 +38,12 @@ link for the app on Herokuapp
 
 
 ## Credits
+* spiciel thanks to Jack Jeffres,Moath Althawad and Kane
 * Devise for User Model in Rails
 * Cloudinary for files mangments
 * Herokuapp for hosting the app online
 * Materialize
 * Ratyrate gem for rating system 
 * Agile-web-development with rails 5 Book by Sam Ruby ,David Bryant with Dave Thomas
-* spiciel thanks to Jack Jeffres,Moath Althawad and Kane
- 
+* Njod Alnasser
+
