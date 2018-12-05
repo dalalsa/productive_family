@@ -44,12 +44,16 @@ class OrdersController < ApplicationController
     order = Order.find_by(id: params[:id])
     order.status = "Approved"
     order.save
+     redirect_to request.referrer
+
   end
 
   def reject
     order = Order.find_by(id: params[:id])
     order.status = "Rejected"
     order.save
+     redirect_to request.referrer
+
   end
 
   def create
