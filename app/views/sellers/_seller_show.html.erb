@@ -38,7 +38,7 @@
       <th>Edit product</th>
     </tr>
   </thead>
-  <% @seller.products.each do |p| %>
+  <% current_seller.products.each do |p| %>
     <tbody>
       <tr>
         <td>
@@ -55,4 +55,7 @@
     </tbody>
   <%end %>
 </table>
-<%= link_to 'add product', new_product_path	 %>
+<%#= link_to 'add product', new_product_path	 %>
+<%= link_to new_product_path do %>
+  <button class="btn-floating btn-large teal darken-3  fixed-action-btn">+</button>
+<% end %>

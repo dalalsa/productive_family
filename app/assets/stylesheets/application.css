@@ -23,14 +23,19 @@ body {
   color: black;
 }
 
-.serllerspage {
-  height: 632px;
+.container {
+  /* height: 632px;
+  width: 100%; */
+  height: 505px;
   width: 100%;
   position: relative;
 }
+
 .intro {
+  /* width: 100%;
+  height: 405px; */
   width: 100%;
-  height: 615px;
+  height: 505px;
 }
 
 button {

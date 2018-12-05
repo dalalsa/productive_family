@@ -28,13 +28,13 @@ class ProductsController < ApplicationController
    def update
     @product = Product.find(params[:id])
     @product.update(product_params)
-    redirect_to products_path
+    redirect_to seller_path(current_seller)
   end
 
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to products_path
+    redirect_to seller_path(current_seller)
   end
 
    private

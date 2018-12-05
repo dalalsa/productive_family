@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
   <div class="slideshow-container">
         <div class="mySlides fade">
@@ -18,15 +19,23 @@
   </div>
 
 <div class = "serllerspage ">
+=======
+<div class = "container ">
+  <div>
+    <%= image_tag("home.png", :class => "intro") %>
+  </div>
+</div>
+>>>>>>> 5a85bf6f5177a9f89509abd33b05008a5277cf98
 <h3 class="center"> All Stores </h3>
-  <% @sellers.each do |seller| %>
-    <div class="row">
-      <div class="col s4">
-      <div class="card small card-panel hoverable" >
+<% @sellers.each do |seller| %>
+  <div class="row">
+    <div class="col s4">
+      <div class="card medium card-panel hoverable" >
         <div class="card-image">
           <%=  image_tag(seller.img.url) %>
         </div>
         <%# <div class="card-content"> %>
+<<<<<<< HEAD
          <%= seller.name %>
         <br>
         <%= seller.description %>
@@ -69,3 +78,20 @@ function showSlides() {
 }
 </script>
 
+=======
+        <div class="content">
+          <%= seller.name %>
+          <br>
+          <%= seller.description %>
+          <%#= imdb_style_rating_for seller, imdb_avg: true%>
+          <%= rating_for seller, "quality", disable_after_rate: true, imdb_avg: true, star_path: true, space: true,enable_half: true, star_on: image_path("star-on.png"), star_off: image_path("star-off.png"), star_half: image_path("star-half.png") %>
+          <% if seller == current_seller || user_signed_in? %>
+            <div>
+              <%= link_to 'More details', seller_path(seller) %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+>>>>>>> 5a85bf6f5177a9f89509abd33b05008a5277cf98
