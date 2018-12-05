@@ -1,42 +1,48 @@
-
 <div class = "row">
-<div class = "col s6">
-<h4 class="left">Sign up as a Customer</h4>
-<br><br><br><br>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  <div class="field">
-    <%= f.label :email %> <br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class = "col s6">
+    <h4 class="left">Sign up as a Customer</h4>
+    <br>
+    <br>
+    <br>
+    <br>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="field">
+        <%= f.label :email %> <br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="field">
+        <%= f.label :username %><br />
+        <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+      </div>
+      <div class="field">
+        <%= f.label :full_name %><br />
+        <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name" %>
+      </div>
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+      <div class="field">
+        <%= f.label :phone %><br />
+        <%= f.text_field :phone, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :address %><br />
+        <%= f.text_field :address, autofocus: true, autocomplete: "address", placeholder: "Riyadh" %>
+      </div>
+      <div class="actions">
+        <button class="waves-effect #00695c teal darken-3 btn-small"><%= f.submit "Sign up" %></button>
+      </div>
+    <% end %>
+    <p> Or log in if you already have an account</p>
+    <%= render "users/shared/links" %>
   </div>
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
-  </div>
-  <div class="field">
-    <%= f.label :full_name %><br />
-    <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name" %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address, autofocus: true, autocomplete: "address", placeholder: "Riyadh" %>
-  </div>
-  <div class="actions">
-    <button class="waves-effect #00695c teal darken-3 btn-small"><%= f.submit "Sign up" %></button>
-  </div>
-<% end %>
-<p> Or log in if you already have an account</p>
-<%= render "users/shared/links" %>
-</div>
 </div>
