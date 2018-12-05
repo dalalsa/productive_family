@@ -12,7 +12,7 @@ aimed for productive families and individuals who work from home
 * User can sign up and edit his profile
 * User can browse the stores and the products 
 * User can place an order 
-* User can send his location to the user
+* User can send his location to the seller
 * User can rate the seller
 # for Sellers side: 
 * Seller can sign up and edit his profile
@@ -38,12 +38,12 @@ link for the app on Herokuapp
 
 
 ## Credits
-* spiciel thanks to Jack Jeffres,Moath Althawad and Kane
+* special thanks to Jack Jeffres,Moath Althawad and Kane
 * Devise for User Model in Rails
 * Cloudinary for files mangments
 * Herokuapp for hosting the app online
 * Materialize
 * Ratyrate gem for rating system 
 * Agile-web-development with rails 5 Book by Sam Ruby ,David Bryant with Dave Thomas
-* Njod Alnasser
+* and thank you to our classmate Njod Alnasser
 
