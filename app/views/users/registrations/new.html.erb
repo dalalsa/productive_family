@@ -31,8 +31,8 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
       <div class="field">
-        <%= f.label :phone %><br />
-        <%= f.text_field :phone, autofocus: true %>
+        <%= f.label :phone, "Phone number"%>  <br>
+        <%= f.telephone_field :phone %>
       </div>
       <div class="field">
         <%= f.label :address %><br />
