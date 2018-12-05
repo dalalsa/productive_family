@@ -32,7 +32,8 @@ link for the app on Herokuapp
 # APIs:
 * Cloudinary
 * Google map with Geocoder
-More Features to add later
+
+# More Features to add later
 * Add notification system 
 
 
