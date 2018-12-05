@@ -3,6 +3,7 @@
   <thead>
     <tr>
       <th>Item Number</th>
+      <th>Product name</th>
       <th>Item quantity</th>
       <th>Customer username</th>
       <th>Customer phone number</th>
@@ -14,6 +15,9 @@
       <tr>
         <td>
           <%= item.id %>
+        </td>
+        <td>
+          <%= item.product.name %>
         </td>
         <td>
           <%= item.quantity %>
