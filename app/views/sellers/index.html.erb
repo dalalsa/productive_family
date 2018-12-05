@@ -17,7 +17,7 @@
         <%= seller.description %>
         <%#= imdb_style_rating_for seller, imdb_avg: true%>
         <%= rating_for seller, "quality", disable_after_rate: true, imdb_avg: true, star_path: true, space: true,enable_half: true, star_on: image_path("star-on.png"), star_off: image_path("star-off.png"), star_half: image_path("star-half.png") %>
-        <% if seller == current_seller || user_signed_in? || !user_signed_in? %>
+        <% if seller == current_seller || user_signed_in? %>
           <div>
             <%= link_to 'More details', seller_path(seller) %>
           </div>
