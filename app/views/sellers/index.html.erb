@@ -1,69 +1,64 @@
-
-
-  <div class="slideshow-container">
-        <div class="mySlides fade">
-            <%= image_tag 'appetize.jpg', :class => "sliderImage" %>
-        </div>
-      <div class="mySlides fade">
-        <%= image_tag 'appetizersjpg.jpg', :class => "sliderImage" %>
-      </div>
-      <div class="mySlides fade">
-        <%= image_tag 'carrots.jpg', :class => "sliderImage" %>
-      </div>
-    </div>
-<br>
-  <div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <%= image_tag 'appetize.jpg', :class => "sliderImage" %>
   </div>
-
-
+  <div class="mySlides fade">
+    <%= image_tag 'appetizersjpg.jpg', :class => "sliderImage" %>
+  </div>
+  <div class="mySlides fade">
+    <%= image_tag 'carrots.jpg', :class => "sliderImage" %>
+  </div>
+</div>
+<br>
+<div style="text-align:center">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
 <div class = "serllerspage ">
-<h3 class="center"> All Stores </h3>
-<% @sellers.each do |seller| %>
-  <div class="row">
-    <div class="col s4">
-      <div class="card medium card-panel hoverable" >
-        <div class="card-image">
-          <%=  image_tag(seller.img.url) %>
-        </div>
-        <%# <div class="card-content"> %>
-        <div class="content">
-          <%= seller.name %>
-          <br>
-          <%= seller.description %>
-          <%#= imdb_style_rating_for seller, imdb_avg: true%>
-          <%= rating_for seller, "quality", disable_after_rate: true, star_path: "", star_on: image_path("star-on.png"), star_off: image_path("star-off.png"), star_half: image_path("star-half.png"), cancel_on: image_path("cancel-on.png"), cancel_off: image_path("cancel-off.png") %>
-          <% if seller == current_seller || user_signed_in? %>
-            <div>
-              <%= link_to 'More details', seller_path(seller) %>
-            </div>
-          <% end %>
+  <h3 class="center"> All Stores </h3>
+  <% @sellers.each do |seller| %>
+    <div class="row">
+      <div class="col s4">
+        <div class="card medium card-panel hoverable" >
+          <div class="card-image">
+            <%=  image_tag(seller.img.url) %>
+          </div>
+          <%# <div class="card-content"> %>
+          <div class="content">
+            <%= seller.name %>
+            <br>
+            <%= seller.description %>
+            <%= imdb_style_rating_for seller, imdb_avg: true%>
+            <%= rating_for seller, "quality", disable_after_rate: true, star_path: "", star_on: image_path("star-on.png"), star_off: image_path("star-off.png"), star_half: image_path("star-half.png"), cancel_on: image_path("cancel-on.png"), cancel_off: image_path("cancel-off.png") %>
+            <% if seller == current_seller || user_signed_in? %>
+              <div>
+                <%= link_to 'More details', seller_path(seller) %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-  
-<script>
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-   var i;
-   var slides = document.getElementsByClassName("mySlides");
-
-   var dots = document.getElementsByClassName("dot");
-   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-   }
-   slideIndex++;
-   if (slideIndex > slides.length) {slideIndex = 1}
-   for (i = 0; i < dots.length; i++) {
-       dots[i].className = dots[i].className.replace(" active", "");
-   }
-   slides[slideIndex-1].style.display = "block";
-   dots[slideIndex-1].className += " active";
-   setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
-</script>
+    <% end %>
+    <script>
+      var slideIndex = 0;
+      showSlides();
+      
+      function showSlides() {
+         var i;
+         var slides = document.getElementsByClassName("mySlides");
+      
+         var dots = document.getElementsByClassName("dot");
+         for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+         }
+         slideIndex++;
+         if (slideIndex > slides.length) {slideIndex = 1}
+         for (i = 0; i < dots.length; i++) {
+             dots[i].className = dots[i].className.replace(" active", "");
+         }
+         slides[slideIndex-1].style.display = "block";
+         dots[slideIndex-1].className += " active";
+         setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+    </script>

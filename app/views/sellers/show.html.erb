@@ -1,20 +1,7 @@
 <%if seller_signed_in?%>
   <%= render partial: 'seller_show' %>
 <% else %>
-
-
-
-
-
-
   <h5>All Products by <%= @seller.name %>:</h5>
-  <%= imdb_style_rating_for @seller, imdb_avg: true%>
-<<<<<<< HEAD
-   Rate: <%= rating_for @seller, "quality",disable_after_rate: true, space: true,enable_half: true %>
-
-=======
-  Rate: <%= rating_for @seller, "quality",disable_after_rate: true, imdb_avg: true, space: true,enable_half: true %>
->>>>>>> 5a85bf6f5177a9f89509abd33b05008a5277cf98
   <% @seller.products.each do |product| %>
     <div class="row">
       <div class="col s4">
