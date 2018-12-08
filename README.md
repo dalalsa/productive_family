@@ -1,9 +1,9 @@
 ## README
 # Group Team :
-Thekra Alouis
-Nora Alsubei
-Haya Almosa
-Dalal Saeed
+* Thekra Alouis
+* Nora Alsubei
+* Haya Almosa
+* Dalal Saeed
 
 
 ## App Name
