@@ -19,14 +19,14 @@
 <script>
   function getAddress() {
   //if (navigator.geolocation) {
-    //navigator.geolocation.getCurrentPosition(function(position) {
+   //navigator.geolocation.getCurrentPosition(function(position) {
     //  console.log(<%=current_user%>);
-      // let latResult = position.coords.latitude;
-      //let latResult = <%= current_user.latitude %>
+    //let latResult = position.coords.latitude;
+    //console.log(position.coords)
       // if <%= !current_user.latitude %> do \
         // get me navigator.geolocation
-      // let longResult = position.coords.longitude;
-      //let longResult = <%= current_user.longitude %>
+   //let longResult = position.coords.longitude;
+   //Geocoder.search "24.6655998, 46.676702899999995"
       //   let result = latResult + "," + longResult;
   
        //console.log("lat " + latResult, "long " + longResult);
@@ -53,9 +53,10 @@
         title: "your location"
       });
   
-    //});
-  //} else {
-  //  console.log("geolocation is not supported ");
+  
+  //});
+   //} else {
+   //console.log("geolocation is not supported ");
   //}
   
   }

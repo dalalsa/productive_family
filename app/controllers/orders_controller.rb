@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
       current_user.address = @location.address
        current_user.save
     else
-      if !current_user.address.include?("riyadh")
+      # if !current_user.address.include?("riyadh")
         #  @location = Geocoder.search(request.ip)[0]
       @location = request.location
       current_user.latitude = @location.latitude
@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
       current_user.address = @location.address
       #  console
        current_user.save
-      end
+      # end
      
     end
     # raise
