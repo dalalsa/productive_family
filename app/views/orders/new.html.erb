@@ -18,30 +18,25 @@
 <%#= irb %>
 <script>
   function getAddress() {
-  //if (navigator.geolocation) {
-   //navigator.geolocation.getCurrentPosition(function(position) {
-    //  console.log(<%=current_user%>);
-    //let latResult = position.coords.latitude;
-    //console.log(position.coords)
-      // if <%= !current_user.latitude %> do \
-        // get me navigator.geolocation
-   //let longResult = position.coords.longitude;
-   //Geocoder.search "24.6655998, 46.676702899999995"
-      //   let result = latResult + "," + longResult;
+  if (navigator.geolocation) {
+   navigator.geolocation.getCurrentPosition(function(position) {
+   let lat = position.coords.latitude;
+ 
+  let long = position.coords.longitude;
+
+  $("#buy").on('click', function(){
+  //  debugger;
+  $.ajax({
+        url : "/orders",
+        type : "post",
+        <%# data : { data_lat: 'Paris'}, %>
+        data : { data_lat: lat , data_long: long},
+          success: function(post){ alert(this) },
+          error: function(post){ console.log(this) }
+    });
+  })
   
-       //console.log("lat " + latResult, "long " + longResult);
-   // <%if !current_user.address.include? "riyadh" %>
-      //    latResult = position.coords.latitude;
-        //  longResult = position.coords.longitude;
-    // <% end %>
-  let latResult = <%= @location.latitude %>
-  let longResult = <%= @location.longitude %>
-     //    console.log(`Current user address: <%= @location.longitude %>`);
-  
-  
-         // console.log("lat " + latResult, "long " + longResult);
-  
-      let myLatlng = new google.maps.LatLng(latResult, longResult);
+      let myLatlng = new google.maps.LatLng(lat, long);
       let map = new google.maps.Map(document.getElementById("map"), {
         center: myLatlng,
         zoom: 8
@@ -53,14 +48,14 @@
         title: "your location"
       });
   
-  
-  //});
-   //} else {
-   //console.log("geolocation is not supported ");
-  //}
+   });
+  } else {
+  console.log("geolocation is not supported ");
+   }
   
   }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.dig(:google_maps_api_key) %>&callback=getAddress"
     async defer></script>
-<%= button_to "buy" , orders_path(@order), method: :post %>
+<%#= button_to "buy" ,  orders_path(@order) ,method: :post  %>
+<%= button_to "buy" ,  orders_path(@order) , { action: "post", id: "buy" }  %>
